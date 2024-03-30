@@ -6,14 +6,18 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+// Rutas de la pagina web
 Route::get('/', function () {
     $loginUrl = route('login');
 
     return Inertia::render('Inicio', compact('loginUrl'));
 });
 
+Route::get('/servicios', function () {
+    return Inertia::render('Servicios');
+});
 
-
+// Rutas de Dashboard
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
