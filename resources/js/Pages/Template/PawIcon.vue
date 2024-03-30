@@ -1,7 +1,7 @@
 <template>
     <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="dark:fill-white icon icon-tabler icon-tabler-paw inline"
+        class="dark:stroke-white icon icon-tabler icon-tabler-paw inline"
         width="40"
         height="40"
         viewBox="0 0 24 24"

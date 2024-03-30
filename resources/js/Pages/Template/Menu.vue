@@ -1,10 +1,11 @@
 <script setup>
 import DarkIcon from "./DarkIcon.vue";
 import PawIcon from "./PawIcon.vue";
-
+// Recibe el paremetro de Inico.vue
 const props = defineProps({
     loginUrl: String,
 });
+
 
 </script>
 
@@ -49,7 +50,7 @@ const props = defineProps({
                 <DarkIcon />
                 <!-- Boton de Dashboard -->
                 <div
-                    class="cursor-pointer bg-[#3e9392] text-white duration-500 px-6 py-2 mx-4 hover:bg-[##71b5b7] rounded">
+                    class="cursor-pointer bg-[#3e9392] text-white duration-500 px-6 py-2 mx-4 hover:bg-[#71b5b7] rounded">
                     <a :href="loginUrl">Log in</a>
                 </div>
             </ul>
