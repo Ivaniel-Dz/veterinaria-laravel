@@ -1,6 +1,7 @@
 <script setup>
 import Menu from "./Template/Menu.vue";
-import contacto from "./Contacto.vue";
+import inicio from "./Portada.vue";
+import servicio from "./Servicio.vue";
 //Recibe el parametro de web.php
 const props = defineProps({
     loginUrl: String,
@@ -9,8 +10,9 @@ const props = defineProps({
 </script>
 
 <template>
-    <div class="bg-[#F8F6E3] dark:bg-gray-800 h-screen w-screen">
-    <Menu :loginUrl="loginUrl"/> <!---Envia el parametro al componente Menu -->
-    <contacto/>
+    <div class="dark:bg-gray-800">
+        <Menu :loginUrl="loginUrl"/> <!---Envia el parametro al componente Menu -->
+        <inicio/>
+        <servicio/>
     </div>
 </template>

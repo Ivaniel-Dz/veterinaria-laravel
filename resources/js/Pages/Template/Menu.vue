@@ -21,9 +21,9 @@ function Menu(e) {
 </script>
 
 <template>
-
     <header
-        class="p-5 dark:bg-gray-800 bg-white shadow dark:shadow-gray-700 md:flex md:items-center md:justify-between">
+        class="p-5 dark:bg-gray-800 bg-white shadow dark:shadow-gray-700 md:flex md:items-center md:justify-between"
+    >
         <!-- logo -->
         <div class="flex justify-between items-center">
             <span class="dark:text-white text-2xl cursor-pointer">
@@ -40,32 +40,37 @@ function Menu(e) {
         <!-- Opciones -->
         <ul
             id="mobile-menu"
-            class="md:flex md:items-center dark:text-white z-[-1] md:z-auto md:static absolute dark:bg-gray-800 bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px]">
+            class="md:flex md:items-center dark:text-white z-[-1] md:z-auto md:static absolute dark:bg-gray-800 bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px]"
+        >
             <li class="mx-4 my-6 md:my-0">
                 <a
-                    href="#"
-                    class="text-[16px] hover:text-[#3e9392] transition-all ease-in duration-500">
+                    href="#inicio"
+                    class="text-[16px] hover:text-[#3e9392] transition-all ease-in duration-500"
+                >
                     Inicio
                 </a>
             </li>
             <li class="mx-4 my-6 md:my-0">
                 <a
-                    href="#"
-                    class="text-[16px] hover:text-[#3e9392] transition-all ease-in duration-500">
+                    href="#servicio"
+                    class="text-[16px] hover:text-[#3e9392] transition-all ease-in duration-500"
+                >
                     Servicio
                 </a>
             </li>
             <li class="mx-4 my-6 md:my-0">
                 <a
-                    href="#"
-                    class="text-[16px] hover:text-[#3e9392] transition-all ease-in duration-500">
+                    href="#nosotros"
+                    class="text-[16px] hover:text-[#3e9392] transition-all ease-in duration-500"
+                >
                     Nosotros
                 </a>
             </li>
             <li class="mx-4 my-6 md:my-0">
                 <a
-                    href="#"
-                    class="text-[16px] hover:text-[#3e9392] transition-all ease-in duration-500">
+                    href="#contacto"
+                    class="text-[16px] hover:text-[#3e9392] transition-all ease-in duration-500"
+                >
                     Contacto
                 </a>
             </li>
@@ -74,11 +79,10 @@ function Menu(e) {
             <DarkIcon />
             <!-- Boton de Dashboard -->
             <button
-                class="bg-[#3e9392] text-white duration-500 px-6 py-2 mx-4 hover:bg-[#71b5b7] rounded">
+                class="bg-[#3e9392] text-white duration-500 px-6 py-2 mx-4 hover:bg-[#71b5b7] rounded"
+            >
                 <a :href="loginUrl">Log in</a>
             </button>
         </ul>
-
     </header>
-
 </template>
