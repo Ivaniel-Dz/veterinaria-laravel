@@ -1,14 +1,14 @@
 <template>
     <section
         id="inicio"
-        class="bg-gradient-to-b from-teal-500 to-green-40 dark:text-white w-full h-auto flex gap-8 flex-wrap-reverse p-4 justify-center lg:gap-x-16"
+        class="bg-gradient-to-b from-teal-500 to-green-40 dark:text-white w-full h-auto flex gap-8 flex-wrap-reverse p-4 justify-center"
     >
-        <article class="md:flex-grow-0 md:basis-[300px] lg:basis-[500px] lg:py-6">
+        <article class="md:flex-grow-0 md:basis-[300px] lg:basis-[500px] xl:basis-[800px] lg:py-6">
             <h2 class="text-3xl md:text-4xl font-semibold lg:pt-20 md:pt-16">
                 Bienvenido a <br />
                 Veterinaria Happy Pets
             </h2>
-            <p class="text-base md:text-[18px] py-4">
+            <p class="text-base md:text-[18px] py-4 xl:mr-44">
                 Ofrecemos atención de primera calidad con un enfoque en el
                 bienestar integral de tus mascotas. Nuestro equipo profesional
                 brinda cuidado experto y compasivo, desde consultas médicas

@@ -1,7 +1,7 @@
 
 <template>
 
-    <h2 class="dark:text-white sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900 px-4  md:px-[100px] lg:px-[100px]">Servicios</h2>
+    <h2 class="dark:text-white sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900 px-4  md:px-[115px] lg:px-[115px]">Servicios</h2>
 
     <section id="servicios" class="dark:text-white w-full h-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 px-4 md:px-[100px] lg:px-[100px]">
 

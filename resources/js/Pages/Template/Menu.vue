@@ -22,7 +22,7 @@ function Menu(e) {
 
 <template>
     <header
-        class="p-5 dark:bg-gray-800 bg-white shadow dark:shadow-gray-700 md:flex md:items-center md:justify-between sticky top-0">
+        class="py-5 md:pl-5 lg:px-28 dark:bg-gray-800 bg-white shadow dark:shadow-gray-700 md:flex md:items-center md:justify-between sticky top-0">
         <!-- logo -->
         <div class="flex justify-between items-center">
             <span class="dark:text-white text-2xl cursor-pointer">
