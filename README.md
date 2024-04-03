@@ -35,7 +35,7 @@ Opciones 1 escogida:
 Opciones 2 escogida:
 2: tailwindcomponents
 
-4. Ejecutamos la migracion de la base de datos despues de haber configurado el archivo .env
+4. Ejecutamos la migración de la base de datos después de haber configurado el archivo .env
 ```bash
 php artisan migrate
 ```

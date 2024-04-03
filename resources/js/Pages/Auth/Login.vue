@@ -1,5 +1,5 @@
 <script setup>
-import ApplicationLogo from '@/Components/ApplicationLogo.vue';
+import PawIcon from '@/Pages/Template/PawIcon.vue';
 import Checkbox from '@/Components/Checkbox.vue';
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 import InputError from '@/Components/InputError.vue';
@@ -35,7 +35,9 @@ const submit = () => {
 
     <GuestLayout>
         <Link href="/" class="flex items-center justify-center">
-            <ApplicationLogo class="h-20 w-20 fill-current text-gray-500" />
+            <!-- <PawIcon class="h-20 w-20"/> -->
+            <img src="../../../../public/img/logo.png" class="w-52 h-52 p-0 m-0" alt="">
+            <!-- <h2>Happy Pets</h2> -->
         </Link>
 
         <div v-if="status" class="mb-4 text-sm font-medium text-green-600">

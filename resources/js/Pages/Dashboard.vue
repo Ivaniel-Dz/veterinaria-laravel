@@ -8,9 +8,10 @@ import { Head } from '@inertiajs/vue3';
 
     <AuthenticatedLayout>
         <template #header>
-            Dashboard
+            Citas
         </template>
 
+        <!-- Tabla de citas -->
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 border-b border-gray-200">
                 You're logged in!
