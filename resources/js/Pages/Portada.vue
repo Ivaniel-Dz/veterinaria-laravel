@@ -1,8 +1,9 @@
 <template>
+
     <section
         id="inicio"
-        class="bg-gradient-to-b from-teal-500 to-green-40 dark:text-white w-full h-auto flex gap-8 flex-wrap-reverse p-4 justify-center"
-    >
+        class="bg-gradient-to-b from-teal-500 to-green-40 dark:text-white w-full h-auto flex gap-8 flex-wrap-reverse p-4 justify-center">
+
         <article class="md:flex-grow-0 md:basis-[300px] lg:basis-[500px] xl:basis-[800px] lg:py-6">
             <h2 class="text-3xl md:text-4xl font-semibold lg:pt-20 md:pt-16">
                 Bienvenido a <br />
@@ -15,21 +16,24 @@
                 hasta cirugías, garantizando la salud y felicidad de tus seres
                 queridos peludos.
             </p>
-            <button
-                class="w-180px h-50px text-[0.97em] text-center bg-[#3E9392] text-white py-3 px-5 rounded-full hover:shadow-none transition-all ease-in duration-500"
-            >
-                Reservar Cita
-            </button>
+            
+            <!-- Btn -->
+            <div class="py-8">
+                <a href="#cita" class="w-180px h-50px text-[0.97em] text-center bg-[#3E9392] text-white py-3 px-5 rounded-full hover:shadow-none transition-all ease-in duration-500">
+                    Reservar Cita
+                </a>
+            </div>
+            
         </article>
 
         <figure class="md:flex-grow-0 md:basis-[300px] lg:basis-[400px] md:py-6 lg:flex lg:items-center lg:justify-center">
-            <img
-                class="w-[340px] h-[450px]"
+            <img class="w-[340px] h-[450px]"
                 src="https://images.pexels.com/photos/7469226/pexels-photo-7469226.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt=""
-            />
+                alt=""/>
         </figure>
+
     </section>
+
 </template>
 
 <style scoped>
