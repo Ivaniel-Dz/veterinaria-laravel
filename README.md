@@ -65,3 +65,49 @@ Crear el archivo `.prettierrc.js` en el proyecto y dentro solo agregar `{}`
 3. en el archivo web.php donde están declaradas los routers se agrega los routers de los componentes creadas.
 
 ## Creación de las migraciones
+
+```bash
+php artisan make:migration create_mensajes_table --create=mensajes
+```
+
+```bash
+php artisan make:migration create_propietarios_table --create=propietarios
+```
+
+```bash
+php artisan make:migration create_mascotas_table --create=mascotas
+```
+
+```bash
+php artisan make:migration create_servicios_table --create=servicios
+```
+
+```bash
+php artisan make:migration create_citas_table --create=citas
+```
+
+## Crear Model
+```bash
+php artisan make:model Name
+```
+
+## Crear Controller
+```bash
+php artisan make:controller PhotoController --resource
+```
+
+## Crear Factory: datos de pruebas
+```bash
+php artisan make:seeder MensajeSeeder
+```
+```bash
+php artisan make:factory MensajeFactory
+```
+```bash
+php artisan migrate:fresh --seed
+```
+
+## Mejoras del sisteme
+- Que muestre en el formulario de citas que hora y dia están disponibles
+- asignar veterinario a las automáticamente de acuerdo su disponibilidad
+- Asignar roles
