@@ -1,21 +1,21 @@
-<script setup>
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue'
-import { Head } from '@inertiajs/vue3';
-</script>
-
 <template>
-    <Head title="Citas" />
+    <Head title="Mensajes" />
 
     <AuthenticatedLayout>
         <template #header>
-            Citas
+            Mensajes
         </template>
 
-        <!-- Tabla de citas -->
+        <!-- Tabla de mensajes -->
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 border-b border-gray-200">
-                You're logged in!
+                Tabla de mensajes
             </div>
         </div>
     </AuthenticatedLayout>
 </template>
+
+<script setup>
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
+import { Head } from '@inertiajs/vue3';
+</script>

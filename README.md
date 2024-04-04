@@ -58,4 +58,10 @@ npm install -D prettier prettier-plugin-tailwindcss
 
 Crear el archivo `.prettierrc.js` en el proyecto y dentro solo agregar `{}`
 
-## 
+## Crear las navegación en el dashboard
+1. Crea el componente: Mensaje, Service, Dashboard.
+2. En el componente Navigation que se encuentra en `js/Layouts/Navigation.vue`.
+    - Se agrega el link de los componente a traves del parámetro router().
+3. en el archivo web.php donde están declaradas los routers se agrega los routers de los componentes creadas.
+
+## Creación de las migraciones

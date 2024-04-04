@@ -1,15 +1,15 @@
 <template>
-    <Head title="About us" />
+    <Head title="Service" />
 
     <AuthenticatedLayout>
         <template #header>
-            Mensajes
+            Servicio
         </template>
 
         <!-- Tabla de mensajes -->
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 border-b border-gray-200">
-                Sample static text page
+                Tabla de servicio
             </div>
         </div>
     </AuthenticatedLayout>
