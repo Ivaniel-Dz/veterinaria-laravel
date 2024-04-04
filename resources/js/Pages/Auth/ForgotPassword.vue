@@ -1,5 +1,4 @@
 <script setup>
-import ApplicationLogo from '@/Components/ApplicationLogo.vue';
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
@@ -27,7 +26,7 @@ const submit = () => {
 
     <GuestLayout>
         <Link href="/" class="flex justify-center items-center mb-4">
-            <ApplicationLogo class="w-20 h-20 text-gray-500 fill-current" />
+            <img src="../../../../public/img/logo.png" class="w-52 h-52 p-0 m-0" alt="">
         </Link>
 
         <div class="mb-4 text-sm text-gray-600">

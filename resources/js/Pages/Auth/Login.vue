@@ -72,6 +72,12 @@ const submit = () => {
                     Log in
                 </PrimaryButton>
             </div>
+
+            <div class="flex items-center justify-center">
+                <Link :href="route('register')" class="text-sm text-gray-600 underline hover:text-gray-900 pt-3">
+                    Register
+                </Link>
+            </div>
         </form>
     </GuestLayout>
 </template>
