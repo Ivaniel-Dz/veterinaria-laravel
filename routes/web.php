@@ -29,7 +29,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     // Rutas para mensajes
-    Route::get('mensajes', [MensajeController::class, 'index'])->name('mensaje');
+    Route::get('mensajes', [MensajeController::class, 'index'])->name('mensajes.index');
 });
 
 require __DIR__.'/auth.php';

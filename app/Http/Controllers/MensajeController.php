@@ -12,7 +12,7 @@ class MensajeController extends Controller
     public function index()
     {
 
-        return Inertia::render('Mensaje', [
+        return Inertia::render('Mensajes/Index', [
             'mensajes' => Mensaje::paginate()
         ]);
     }
