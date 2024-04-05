@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MensajeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
@@ -19,7 +20,6 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/mensaje', fn () => Inertia::render('Mensaje'))->name('mensaje');
     Route::get('/service', fn () => Inertia::render('Service'))->name('service');
 
     Route::get('users', [UserController::class, 'index'])->name('users.index');
@@ -27,6 +27,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    // Rutas para mensajes
+    Route::get('mensajes', [MensajeController::class, 'index'])->name('mensaje');
 });
 
 require __DIR__.'/auth.php';
