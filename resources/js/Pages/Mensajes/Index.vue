@@ -133,7 +133,6 @@ const props = defineProps({
                                     </button>
                                 </div>
                             </div>
-                            
                         </div>
                     </div>
                 </div>

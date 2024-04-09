@@ -4,7 +4,7 @@ import Inicio from "./Portada.vue";
 import Servicio from "./Servicio.vue";
 import Nosotros from "./Nosotros.vue";
 import Cita from "./Cita.vue";
-import Contacto from "./Contacto.vue";
+import Contacto from "./Mensajes/Contacto.vue";
 import Footer from "./Template/Footer.vue";
 
 //Recibe el parametro de web.php
