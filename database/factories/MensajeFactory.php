@@ -17,7 +17,7 @@ class MensajeFactory extends Factory
     public function definition(): array
     {
         return [
-            'nombre' => $this->faker->sentence(),
+            'nombre' => $this->faker->name(),
             'email' => $this->faker->email(),
             'descripcion' => $this->faker->paragraph()
         ];

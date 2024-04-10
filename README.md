@@ -107,6 +107,55 @@ php artisan make:factory MensajeFactory
 php artisan migrate:fresh --seed
 ```
 
+## Modelo, Vista, controlador de Formulario de Mensajes
+
+### 1. Modelo `Mensaje`
+
+El modelo `Mensaje` representa un mensaje en la aplicación. Está ubicado en `app/Models/Mensaje.php`.
+
+##### Atributos:
+
+- `$nombre`: Nombre del remitente del mensaje.
+- `$email`: Dirección de correo electrónico del remitente del mensaje.
+- `$descripcion`: Contenido del mensaje.
+
+##### Métodos:
+
+- `protected $fillable`: Especifica los atributos que pueden ser asignados en masa al crear o actualizar una instancia de `Mensaje`.
+
+---
+
+### 2. Controlador `MensajeController`
+
+El controlador `MensajeController` maneja las acciones relacionadas con los mensajes en la aplicación. Se encuentra en `app/Http/Controllers/MensajeController.php`.
+
+##### Métodos:
+
+- `index()`: Este método maneja la lógica para mostrar una lista paginada de mensajes. Utiliza el modelo `Mensaje` para obtener los mensajes de la base de datos y luego renderiza una vista usando Inertia.
+
+---
+
+### 3. Rutas
+
+Las rutas asociadas con el controlador `MensajeController` están definidas en el archivo de rutas `routes/web.php`.
+
+- **GET /mensajes**: Ruta para mostrar una lista paginada de mensajes. Esta ruta utiliza el método `index()` del controlador `MensajeController`.
+
+---
+
+### 4. Vistas
+
+La vista `'Mensajes/Index'` es utilizada para mostrar la lista paginada de mensajes. Esta vista se renderiza utilizando Inertia y se espera que reciba un conjunto de mensajes como datos.
+
+---
+
+Esta documentación proporciona una descripción general de los componentes principales relacionados con el manejo de mensajes en la aplicación. Los modelos, controladores, rutas y vistas trabajan en conjunto para permitir a los usuarios ver y gestionar mensajes de manera efectiva.
+
+## Pendiente
+1. CRUD completo de citas
+2. Enviar mensaje por form
+3. Eliminar y actualizar mensajes desde el dashboard
+
 ## Mejoras del sisteme
 - Que muestre en el formulario de citas que hora y dia están disponibles
 - asignar veterinario a las automáticamente de acuerdo su disponibilidad
