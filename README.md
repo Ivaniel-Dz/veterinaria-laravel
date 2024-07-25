@@ -156,7 +156,21 @@ Esta documentación proporciona una descripción general de los componentes prin
 2. Enviar mensaje por form
 3. Eliminar y actualizar mensajes desde el dashboard
 
-## Mejoras del sisteme
+## Mejoras del sistema
 - Que muestre en el formulario de citas que hora y dia están disponibles
-- asignar veterinario a las automáticamente de acuerdo su disponibilidad
+- Asignar veterinario automáticamente de acuerdo su disponibilidad
 - Asignar roles
+
+## Preview de la web
+### Landing Page
+![preview](/public/img/preview/preview1.jpeg)
+### Landing Page (Modo Oscuro)
+![preview](/public/img/preview/preview2.jpeg)
+### Login
+![preview](/public/img/preview/preview3.jpeg)
+### Registro
+![preview](/public/img/preview/preview4.jpeg)
+### Recuperación de contraseña
+![preview](/public/img/preview/preview5.jpeg)
+### Dashboard
+![preview](/public/img/preview/preview6.jpeg)
