@@ -29,8 +29,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     // Rutas para mensajes
-    Route::get('mensajes', [MensajeController::class, 'index'])->name('mensajes.index'); // ruta GET (Recibir)
+    Route::get('mensajes', [MensajeController::class, 'index'])->name('mensajes.index'); // ruta GET (Mostrar)
     Route::post('mensajes', [MensajeController::class, 'store'])->name('mensajes.store'); // ruta POST (Enviar)
+
+    //Rutas para Citas
+
 });
 
 require __DIR__.'/auth.php';

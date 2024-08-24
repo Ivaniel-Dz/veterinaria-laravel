@@ -6,6 +6,7 @@
 - Inertia
 - Mysql
 - Tailwind
+- axios
 
 ## Instalación
 1. Creación del proyecto
@@ -54,6 +55,11 @@ npm run dev
 6. Instalación de Plugin para ordenar las clases de tailwind
 ```bash
 npm install -D prettier prettier-plugin-tailwindcss
+```
+
+7. Instalación de axios para el form
+```bash
+npm install axios
 ```
 
 Crear el archivo `.prettierrc.js` en el proyecto y dentro solo agregar `{}`
