@@ -104,11 +104,12 @@ php artisan make:controller PhotoController --resource
 
 ## Crear Factory: datos de pruebas
 ```bash
-php artisan make:seeder MensajeSeeder
-```
-```bash
 php artisan make:factory MensajeFactory
 ```
+
+- No usamos seeders especifico para este proyecto
+- La cantidad de datos a generar se hará en ``seeders/DatabaseSeeder.php``
+
 ```bash
 php artisan migrate:fresh --seed
 ```
