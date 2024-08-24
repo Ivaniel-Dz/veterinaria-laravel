@@ -3,7 +3,7 @@ import Menu from "./Template/Menu.vue";
 import Inicio from "./Portada.vue";
 import Servicio from "./Servicio.vue";
 import Nosotros from "./Nosotros.vue";
-import Cita from "./Cita.vue";
+import Cita from "./Citas/Create.vue";
 import Contacto from "./Mensajes/Contacto.vue";
 import Footer from "./Template/Footer.vue";
 

@@ -7,6 +7,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+
 // Rutas de la pagina web
 Route::get('/', function () {
     $loginUrl = route('login');
@@ -14,11 +15,18 @@ Route::get('/', function () {
     return Inertia::render('Inicio', compact('loginUrl'));
 });
 
-// Rutas de Dashboard
+
+// Ruta para enviar mensajes, disponible para usuarios no autenticados
+Route::post('mensajes', [MensajeController::class, 'store'])->name('mensajes.store'); // ruta POST (Enviar)
+
+
+// Rutas de Dashboard con autenticación 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+
+// Rutas de Dashboard protegidas con autenticación
 Route::middleware('auth')->group(function () {
     Route::get('/service', fn () => Inertia::render('Service'))->name('service');
 
@@ -30,7 +38,6 @@ Route::middleware('auth')->group(function () {
 
     // Rutas para mensajes
     Route::get('mensajes', [MensajeController::class, 'index'])->name('mensajes.index'); // ruta GET (Mostrar)
-    Route::post('mensajes', [MensajeController::class, 'store'])->name('mensajes.store'); // ruta POST (Enviar)
 
     //Rutas para Citas
 

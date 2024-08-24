@@ -1,5 +1,5 @@
 <script setup>
-import FormMensaje from "./FormMensaje.vue";
+import FormMensaje from "./Create.vue";
 import PortadaContact from "./PortadaContact.vue";
 </script>
 
