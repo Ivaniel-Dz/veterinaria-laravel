@@ -229,7 +229,62 @@ El problema fue solucionado exitosamente al configurar adecuadamente las rutas d
 - Asignar veterinario automáticamente de acuerdo su disponibilidad
 - Asignar roles
 
-## Preview de la web
+# Ejecución del Proyecto en Local
+1. Instala las dependencias de Laravel utilizando Composer:
+```bash
+composer install
+```
+
+2. Copia el archivo de entorno de ejemplo (.env.example) para crear tu archivo .env:
+```bash
+cp .env.example .env
+```
+
+3. Configuración el archivo `.env`, verifica el nombre del proyecto y conexión de la BBDD del proyecto
+```bash
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=veterinaria
+DB_USERNAME=root
+DB_PASSWORD=ivaniel
+```
+
+4. Genera la clave de aplicación de Laravel:
+```bash
+php artisan key:generate
+```
+
+5. Ejecuta las migraciones para crear las tablas en la base de datos:
+```bash
+php artisan migrate
+```
+
+6. (Opcional) Sembrar la base de datos con datos de prueba:
+```bash
+php artisan db:seed
+```
+
+7. Instala las dependencias de Vue
+```bash
+npm install
+```
+
+```bash
+npm install axios
+```
+
+8. Ejecuta el servidor de vite
+```bash
+npm run dev
+```
+
+9. Ejecuta el servidor de composer
+```bash
+php artisan serve
+```
+
+# Preview de la web
 ### Landing Page
 ![preview](/public/img/preview/preview1.jpeg)
 ### Landing Page (Modo Oscuro)
