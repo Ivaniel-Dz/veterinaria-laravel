@@ -156,6 +156,68 @@ Esta documentación proporciona una descripción general de los componentes prin
 2. Enviar mensaje por form
 3. Eliminar y actualizar mensajes desde el dashboard
 
+## Problemas que hubo a la hora de desarrollo
+### 1. Envio del form a la base de dato
+
+**Problema Inicial**: Al intentar enviar un formulario desde una aplicación Vue hacia un backend Laravel, se presentó el error: **"The POST method is not supported for route /"**. Esto indicaba que no existía una ruta configurada para manejar solicitudes POST en el endpoint raíz (`/`).
+
+### Pasos para Solucionar el Problema
+
+1. **Revisión de Configuración Inicial**:
+   - Se verificó que el formulario Vue no estaba configurado correctamente para enviar datos a la ruta adecuada en Laravel.
+   - No existía una ruta definida para manejar solicitudes POST en `web.php`.
+
+2. **Actualización del Formulario Vue**:
+   - Se modificó el formulario Vue para utilizar el método `POST` y se cambió el atributo `action` para apuntar a la ruta correcta (`/mensajes`).
+   - Se utilizó `axios` para enviar la solicitud POST y manejar la respuesta desde el servidor.
+
+   **Cambios realizados**:
+   - Implementación de `v-model` en los campos del formulario para la reactividad.
+   - Adición de una función `submitForm` que utiliza `axios.post` para enviar datos al backend Laravel.
+   - Se incluyó el token CSRF dinámicamente en la solicitud para cumplir con las políticas de seguridad de Laravel.
+
+3. **Configuración de Rutas en Laravel**:
+   - Se añadió una nueva ruta POST en `web.php` para manejar la creación de mensajes:
+   
+   ```php
+   Route::post('mensajes', [MensajeController::class, 'store'])->name('mensajes.store');
+   ```
+
+4. **Creación del Método Store en el Controlador**:
+   - Se creó el método `store` en `MensajeController` para validar y guardar los datos recibidos en la base de datos.
+
+   **Código del método `store`**:
+   ```php
+   public function store(Request $request)
+   {
+       $request->validate([
+           'nombre' => 'required|string|max:255',
+           'email' => 'required|email|max:255',
+           'descripcion' => 'required|string|max:500'
+       ]);
+
+       Mensaje::create($request->all());
+
+       return response()->json(['message' => 'Mensaje enviado exitosamente'], 200);
+   }
+   ```
+
+5. **Pruebas y Verificación**:
+   - Se realizaron pruebas exhaustivas para asegurar que el formulario envía los datos correctamente y que estos se almacenan en la base de datos MySQL.
+   - Se verificó que la ruta POST está funcionando y manejando las solicitudes como se espera.
+
+### Instalaciones y Configuraciones Realizadas
+
+- **Axios**: Se instaló y configuró `axios` para manejar las solicitudes HTTP desde el cliente Vue.
+- **Token CSRF**: Configuración correcta del token CSRF para asegurar las solicitudes POST en Laravel.
+- **Rutas y Controladores**: Actualización de las rutas en `web.php` y creación de un método `store` en el controlador correspondiente.
+
+### Conclusión
+
+El problema fue solucionado exitosamente al configurar adecuadamente las rutas de Laravel y el formulario Vue. La aplicación ahora permite el envío de datos a la base de datos MySQL sin errores, asegurando una comunicación eficiente y segura entre el cliente y el servidor.
+
+---
+
 ## Mejoras del sistema
 - Que muestre en el formulario de citas que hora y dia están disponibles
 - Asignar veterinario automáticamente de acuerdo su disponibilidad

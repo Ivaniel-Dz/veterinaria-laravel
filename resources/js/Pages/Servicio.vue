@@ -18,5 +18,6 @@
 </template>
 
 <script setup>
+//importa el API de los servicios que se ofrece
 import { servicios } from '../servicios.js';
 </script>
