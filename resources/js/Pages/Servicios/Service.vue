@@ -1,5 +1,5 @@
 <template>
-    <Head title="Service" />
+    <Head title="Servicios -" />
 
     <AuthenticatedLayout>
 
@@ -11,7 +11,7 @@
                     <!-- Titulo -->
                     <div>
                         <h2 class="text-2xl font-semibold leading-tight">
-                            Servicio
+                            Servicios
                         </h2>
                     </div>
 

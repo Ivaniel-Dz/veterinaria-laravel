@@ -7,7 +7,7 @@
                     <img
                         alt="content"
                         class="object-cover object-center h-full w-full"
-                        src="../../../public/img/logo.png"
+                        src="../../../../public/img/logo.png"
                     />
                 </div>
                 <!-- Mision -->

@@ -21,16 +21,19 @@ Route::get('/', function () {
 Route::post('mensajes', [MensajeController::class, 'store'])->name('mensajes.store'); // ruta POST (Enviar)
 Route::post('citas', [CitaController::class, 'store'])->name('citas.store');
 
-// Rutas de Dashboard con autenticación 
+// Rutas de acceso al Dashboard con autenticación 
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+    //Ingresa la ruta cita
+   return redirect()->route('citas.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
 // Rutas de Dashboard protegidas con autenticación
 Route::middleware('auth')->group(function () {
-    Route::get('/service', fn () => Inertia::render('Service'))->name('service');
+    //Ruta sin controlador 
+    Route::get('/service', fn () => Inertia::render('Servicios/Service'))->name('service');
 
+    //Rutas usando controladores
     Route::get('users', [UserController::class, 'index'])->name('users.index');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

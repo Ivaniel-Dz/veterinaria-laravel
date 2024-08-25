@@ -10,7 +10,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <Head title="Mensajes" />
+    <Head title="Mensajes -" />
 
     <AuthenticatedLayout>
 

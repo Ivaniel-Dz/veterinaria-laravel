@@ -10,7 +10,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <Head title="Mensajes" />
+    <Head title="Citas -" />
 
     <AuthenticatedLayout>
         <main class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
