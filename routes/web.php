@@ -41,7 +41,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     // Rutas para mensajes
-    Route::get('mensajes', [MensajeController::class, 'index'])->name('mensajes.index'); // ruta GET (Mostrar)
+    Route::get('mensajes', [MensajeController::class, 'index'])->name('mensajes.index'); // ruta Mostrar
+    Route::put('mensajes/{id}', [MensajeController::class, 'update'])->name('mensajes.update'); // ruta actualizar
+    Route::delete('mensajes/{id}', [MensajeController::class, 'destroy'])->name('mensajes.destroy'); //ruta para Eliminar
 
     //Rutas para Citas
     Route::get('citas', [CitaController::class, 'index'])->name('citas.index'); // ruta GET (Mostrar)
