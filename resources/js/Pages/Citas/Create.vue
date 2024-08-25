@@ -316,10 +316,10 @@
                                 id="transporte"
                                 v-model="form.transporte"
                             >
-                                <option value="No_transporte">
+                                <option value="No transporte">
                                     No lo deseo
                                 </option>
-                                <option value="id_vuelta">Ida y Vuelta</option>
+                                <option value="id vuelta">Ida y Vuelta</option>
                                 <option value="ida">Solo Ida</option>
                                 <option value="vuelta">Solo Vuelta</option>
                             </select>

@@ -8,9 +8,20 @@ use App\Models\Mascota;
 use App\Models\Servicio;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
+use Inertia\Inertia;
 
 class CitaController extends Controller
 {
+
+    // Muestra los datos
+    public function index()
+    {
+        return Inertia::render('Citas/Index', [
+            'citas' => Cita::with(['propietario', 'mascota', 'servicio'])->paginate()
+        ]);
+    }
+
+    // Guarda los datos en la Base de datos
     public function store(Request $request)
     {
         try {

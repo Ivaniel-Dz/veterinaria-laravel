@@ -41,6 +41,7 @@ Route::middleware('auth')->group(function () {
     Route::get('mensajes', [MensajeController::class, 'index'])->name('mensajes.index'); // ruta GET (Mostrar)
 
     //Rutas para Citas
+    Route::get('citas', [CitaController::class, 'index'])->name('citas.index'); // ruta GET (Mostrar)
 
 });
 
