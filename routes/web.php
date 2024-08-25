@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MensajeController;
+use App\Http\Controllers\CitaController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
@@ -16,9 +17,9 @@ Route::get('/', function () {
 });
 
 
-// Ruta para enviar mensajes, disponible para usuarios no autenticados
+// Ruta para enviar form, disponible para usuarios no autenticados
 Route::post('mensajes', [MensajeController::class, 'store'])->name('mensajes.store'); // ruta POST (Enviar)
-
+Route::post('citas', [CitaController::class, 'store'])->name('citas.store');
 
 // Rutas de Dashboard con autenticación 
 Route::get('/dashboard', function () {
