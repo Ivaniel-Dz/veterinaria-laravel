@@ -1,169 +1,100 @@
 <template>
-  <form @submit.prevent="submitForm" class="text-center mt-5">
-    <!-- Información del Propietario -->
-    <div class="mb-3">
-      <label for="nombre" class="form-label">Nombre del Propietario:</label>
-      <input type="text" id="nombre" v-model="form.nombre" class="form-control" required>
-      <span v-if="errors.nombre" class="text-danger">{{ errors.nombre }}</span>
-    </div>
+    <div
+        class="shadow dark:bg-gray-700 bg-gray-100 rounded-lg lg:w-1/3 md:w-1/2 flex flex-col mx-4 md:ml-auto w-full md:py-8 lg:px-8 mt-8 md:mt-0"
+    >
+        <h2
+            class="text-gray-900 text-lg mb-1 font-medium title-font dark:text-white"
+        >
+            ¿Tienes alguna duda? Escríbenos
+        </h2>
+        <form @submit.prevent="submitForm">
+            <input type="hidden" name="_token" :value="csrfToken" />
+            <div class="relative mb-4">
+                <label
+                    for="name"
+                    class="leading-7 text-sm text-gray-600 dark:text-white"
+                    >Nombre</label
+                >
+                <input
+                    type="text"
+                    id="name"
+                    v-model="form.nombre"
+                    class="w-full bg-white rounded border border-gray-300 focus:border-[#3E9392] focus:ring-1 focus:ring-[#3E9392] text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                />
+            </div>
 
-    <div class="mb-3">
-      <label for="celular" class="form-label">Celular:</label>
-      <input type="text" id="celular" v-model="form.celular" class="form-control" required>
-      <span v-if="errors.celular" class="text-danger">{{ errors.celular }}</span>
-    </div>
+            <div class="relative mb-4">
+                <label
+                    for="email"
+                    class="leading-7 text-sm text-gray-600 dark:text-white"
+                    >Email</label
+                >
+                <input
+                    type="email"
+                    id="email"
+                    v-model="form.email"
+                    class="w-full bg-white rounded border border-gray-300 focus:border-[#3E9392] focus:ring-1 focus:ring-[#3E9392] text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                />
+            </div>
 
-    <div class="mb-3">
-      <label for="telefono" class="form-label">Teléfono:</label>
-      <input type="text" id="telefono" v-model="form.telefono" class="form-control" required>
-      <span v-if="errors.telefono" class="text-danger">{{ errors.telefono }}</span>
-    </div>
+            <div class="relative mb-4">
+                <label
+                    for="message"
+                    class="leading-7 text-sm text-gray-600 dark:text-white"
+                    >Mensaje</label
+                >
+                <textarea
+                    id="message"
+                    v-model="form.descripcion"
+                    class="w-full bg-white rounded border border-gray-300 focus:border-[#3E9392] focus:ring-1 focus:ring-[#3E9392] h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                ></textarea>
+            </div>
 
-    <div class="mb-3">
-      <label for="direccion" class="form-label">Dirección:</label>
-      <input type="text" id="direccion" v-model="form.direccion" class="form-control" required>
-      <span v-if="errors.direccion" class="text-danger">{{ errors.direccion }}</span>
+            <button
+                type="submit"
+                class="text-white bg-[#3E9392] border-0 py-2 px-6 focus:outline-none hover:bg-[#45AB97] rounded text-lg"
+            >
+                Enviar
+            </button>
+        </form>
     </div>
-
-    <!-- Información de la Mascota -->
-    <div class="mb-3">
-      <label for="mascota" class="form-label">Nombre de la Mascota:</label>
-      <input type="text" id="mascota" v-model="form.mascota" class="form-control" required>
-      <span v-if="errors.mascota" class="text-danger">{{ errors.mascota }}</span>
-    </div>
-
-    <div class="mb-3">
-      <label for="especie" class="form-label">Especie:</label>
-      <input type="text" id="especie" v-model="form.especie" class="form-control" required>
-      <span v-if="errors.especie" class="text-danger">{{ errors.especie }}</span>
-    </div>
-
-    <div class="mb-3">
-      <label for="raza" class="form-label">Raza (Opcional):</label>
-      <input type="text" id="raza" v-model="form.raza" class="form-control">
-      <span v-if="errors.raza" class="text-danger">{{ errors.raza }}</span>
-    </div>
-
-    <div class="mb-3">
-      <label for="sexo" class="form-label">Sexo:</label>
-      <select id="sexo" v-model="form.sexo" class="form-control" required>
-        <option value="Macho">Macho</option>
-        <option value="Hembra">Hembra</option>
-      </select>
-      <span v-if="errors.sexo" class="text-danger">{{ errors.sexo }}</span>
-    </div>
-
-    <div class="mb-3">
-      <label for="fecha_nacimiento_mascota" class="form-label">Fecha de Nacimiento (Opcional):</label>
-      <input type="date" id="fecha_nacimiento_mascota" v-model="form.fecha_nacimiento" class="form-control">
-      <span v-if="errors.fecha_nacimiento" class="text-danger">{{ errors.fecha_nacimiento }}</span>
-    </div>
-
-    <div class="mb-3">
-      <label for="peso" class="form-label">Peso (Opcional):</label>
-      <input type="number" step="0.01" id="peso" v-model="form.peso" class="form-control">
-      <span v-if="errors.peso" class="text-danger">{{ errors.peso }}</span>
-    </div>
-
-    <!-- Información de la Cita -->
-    <div class="mb-3">
-      <label for="servicio" class="form-label">Servicio:</label>
-      <select id="servicio" v-model="form.servicio" class="form-control" required>
-        <option value="">Selecciona un Servicio</option>
-        <option value="baño">Baño</option>
-        <option value="vacuna">Vacuna</option>
-      </select>
-      <span v-if="errors.servicio" class="text-danger">{{ errors.servicio }}</span>
-    </div>
-
-    <div class="mb-3">
-      <label for="transporte" class="form-label">Transporte:</label>
-      <input type="text" id="transporte" v-model="form.transporte" class="form-control" required>
-      <span v-if="errors.transporte" class="text-danger">{{ errors.transporte }}</span>
-    </div>
-
-    <div class="mb-3">
-      <label for="fecha_cita" class="form-label">Fecha de Cita:</label>
-      <input type="date" id="fecha_cita" v-model="form.fecha" class="form-control" required>
-      <span v-if="errors.fecha" class="text-danger">{{ errors.fecha }}</span>
-    </div>
-
-    <div class="mb-3">
-      <label for="hora" class="form-label">Hora de Cita:</label>
-      <input type="time" id="hora" v-model="form.hora" class="form-control" required>
-      <span v-if="errors.hora" class="text-danger">{{ errors.hora }}</span>
-    </div>
-
-    <div class="mb-3">
-      <label for="comentario" class="form-label">Comentario (Opcional):</label>
-      <textarea id="comentario" v-model="form.comentario" class="form-control"></textarea>
-      <span v-if="errors.comentario" class="text-danger">{{ errors.comentario }}</span>
-    </div>
-
-    <!-- Botón de Envío -->
-    <button type="submit" class="btn btn-primary">Guardar Cita</button>
-  </form>
 </template>
 
 <script setup>
 import { reactive, ref } from 'vue';
 
-// Formulario reactivo
 const form = reactive({
-  mascota: "",
-  especie: "",
-  raza: "",
-  sexo: "",
-  fecha_nacimiento: "",
-  peso: "",
-  nombre: "",
-  celular: "",
-  telefono: "",
-  direccion: "",
-  servicio: "",
-  transporte: "",
-  fecha: "",
-  hora: "",
-  comentario: "",
+  nombre: '',
+  email: '',
+  descripcion: ''
 });
 
-// Objeto de errores
-const errors = ref({});
+const csrfToken = ref(document.querySelector('meta[name="csrf-token"]').getAttribute('content'));
 
-// Función para enviar el formulario
-async function submitForm() {
+const submitForm = async () => {
   try {
-    const response = await fetch('/citas', {
+    const response = await fetch('/mensajes', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        // Asegúrate de incluir el token CSRF si es necesario
-        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+        'X-CSRF-TOKEN': csrfToken.value
       },
-      body: JSON.stringify(form),
+      body: JSON.stringify(form)
     });
 
-    if (!response.ok) {
-      if (response.status === 422) {
-        const errorData = await response.json();
-        errors.value = errorData.errors;
-      } else {
-        throw new Error('Ocurrió un error al guardar la cita.');
-      }
+    if (response.ok) {
+      const result = await response.json();
+      alert('Mensaje enviado exitosamente');
+      form.nombre = '';
+      form.email = '';
+      form.descripcion = '';
     } else {
-      alert('¡Cita guardada exitosamente!');
-      // Limpiar formulario después del envío
-      Object.keys(form).forEach(key => form[key] = '');
-      errors.value = {};
+      console.error('Error al enviar el formulario:', response.statusText);
+      alert('Hubo un error al enviar el formulario. Por favor, inténtelo de nuevo.');
     }
   } catch (error) {
-    alert(error.message);
+    console.error('Error en la solicitud:', error);
+    alert('Hubo un error en la conexión. Por favor, inténtelo de nuevo.');
   }
-}
+};
 </script>
-
-<style>
-.text-danger {
-  color: red;
-}
-</style>
