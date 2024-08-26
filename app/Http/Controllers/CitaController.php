@@ -13,7 +13,7 @@ use Inertia\Inertia;
 class CitaController extends Controller
 {
 
-    // Muestra los datos
+    // Muestra datos (GET)
     public function index()
     {
         return Inertia::render('Citas/Index', [
@@ -21,7 +21,7 @@ class CitaController extends Controller
         ]);
     }
 
-    // Guarda los datos en la Base de datos
+    // Guardar datos (POST)
     public function store(Request $request)
     {
         try {
@@ -85,5 +85,17 @@ class CitaController extends Controller
         } catch (\Exception $e) {
             return response()->json(['message' => 'Ocurrió un error al guardar la cita.'], 500);
         }
+    }
+
+    // Actualizar datos (PUT)
+
+
+    // Eliminar datos (DELETE)
+    public function destroy($id) {
+        
+        $cita = Cita::findOrFail($id);
+        $cita->delete();
+
+        return redirect()->route('citas.index');
     }
 }

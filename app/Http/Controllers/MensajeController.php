@@ -8,7 +8,7 @@ use Inertia\Inertia;
 
 class MensajeController extends Controller
 {
-    // Mostrar los datos (GET)
+    // Mostrar datos (GET)
     public function index()
     {
         return Inertia::render('Mensajes/Index', [
@@ -16,7 +16,7 @@ class MensajeController extends Controller
         ]);
     }
 
-    // Maneja el almacenamiento de datos (POST)
+    // Guarda datos (POST)
     public function store(Request $request)
     {
         $validatedData = $request->validate([

@@ -293,7 +293,7 @@
 
                                             <button
                                                 class="hover:text-red-900"
-                                                @click="deleteCita(cita.id)"
+                                                @click="openModal(cita.id)"
                                             >
                                                 <IconTrash
                                                     class="hover:stroke-[#d51818]"
@@ -328,6 +328,33 @@
                     </div>
                 </div>
             </section>
+
+            <!-- Modal -->
+            <div
+                v-if="showModal"
+                class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
+            >
+                <div class="bg-white p-6 rounded shadow-md">
+                    <h3 class="text-lg text-gray-900 font-semibold mb-4">
+                        ¿Estás seguro de que quieres eliminar este mensaje?
+                    </h3>
+                    <div class="flex justify-end">
+                        <button
+                            @click="confirmDelete"
+                            class="bg-red-500 text-white px-4 py-2 rounded mr-2 hover:bg-[#d51818]"
+                        >
+                            Eliminar
+                        </button>
+                        <button
+                            @click="closeModal"
+                            class="bg-gray-300 px-4 py-2 rounded hover:bg-gray-400"
+                        >
+                            Cancelar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        
         </section>
 
         <!-- Edicion de Registro de Citas -->
@@ -471,6 +498,7 @@
 
 <script setup>
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
+import { Inertia } from "@inertiajs/inertia";
 import { Head } from "@inertiajs/vue3";
 import { ref } from "vue";
 import IconEdit from "../Icons/Edit.vue";
@@ -498,5 +526,33 @@ function submitForm() {
 // Resetea el form al cancelar
 function resetForm() {
     editingCita.value = false; // Oculta el form
+}
+
+/*********** Eliminar Filas **********************/
+const showModal = ref(false);
+const citaId = ref(null);
+
+// Abrir modal
+function openModal(id) {
+    citaId.value = id;
+    showModal.value = true;
+}
+
+// Cerrar modal
+function closeModal() {
+    showModal.value = false;
+    citaId.value = null;
+}
+
+// Confirmar eliminación
+function confirmDelete() {
+    if (citaId.value) {
+        Inertia.delete(route("citas.destroy", citaId.value), {
+            onFinish: () => {
+                window.location.reload(); // Recargar la página después de eliminar
+            },
+        });
+    }
+    closeModal();
 }
 </script>
