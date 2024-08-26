@@ -1,19 +1,12 @@
-<script setup>
-import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
-import { Head } from "@inertiajs/vue3";
-
-const props = defineProps({
-    citas: {
-        type: Object,
-    },
-});
-</script>
-
 <template>
     <Head title="Citas -" />
 
     <AuthenticatedLayout>
-        <main class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+        <!-- Tabla de Registro de Citas -->
+        <section
+            v-if="!editingCita"
+            class="bg-white overflow-hidden shadow-sm sm:rounded-lg"
+        >
             <!-- Component -->
             <section class="container mx-auto px-4 sm:px-8">
                 <div class="py-8">
@@ -125,6 +118,12 @@ const props = defineProps({
                                             class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
                                         >
                                             Estado
+                                        </th>
+
+                                        <th
+                                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                                        >
+                                            Acción
                                         </th>
                                     </tr>
                                 </thead>
@@ -247,35 +246,59 @@ const props = defineProps({
                                                 ></span>
 
                                                 <span
-                                                class="relative text-orange-900"
+                                                    class="relative text-orange-900"
                                                     v-if="cita.id_estado === 1"
                                                     >Pendiente</span
                                                 >
                                                 <span
-                                                class="relative text-green-900"
+                                                    class="relative text-green-900"
                                                     v-else-if="
                                                         cita.id_estado === 2
                                                     "
                                                     >Atendido</span
                                                 >
                                                 <span
-                                                class="relative text-red-900"
+                                                    class="relative text-red-900"
                                                     v-else-if="
                                                         cita.id_estado === 3
                                                     "
                                                     >Cancelado</span
                                                 >
                                                 <span
-                                                class="relative"
+                                                    class="relative"
                                                     v-else-if="
                                                         cita.id_estado === 4
                                                     "
                                                     >Pospuesto</span
                                                 >
-                                                <span
-                                                class="relative" v-else>Desconocido</span>
+                                                <span class="relative" v-else
+                                                    >Desconocido</span
+                                                >
                                                 <!-- En caso de que no coincida con ningún estado -->
                                             </span>
+                                        </td>
+
+                                        <!-- Botones de accion -->
+                                        <td
+                                            class="border-b border-gray-200 bg-white px-5 py-5 text-sm flex inline-block"
+                                        >
+                                            <button
+                                                class="hover:text-red-900"
+                                                @click="editCita(cita)"
+                                            >
+                                                <IconEdit
+                                                    class="hover:stroke-[#0980f0]"
+                                                />
+                                            </button>
+
+                                            <button
+                                                class="hover:text-red-900"
+                                                @click="deleteCita(cita.id)"
+                                            >
+                                                <IconTrash
+                                                    class="hover:stroke-[#d51818]"
+                                                />
+                                            </button>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -305,6 +328,175 @@ const props = defineProps({
                     </div>
                 </div>
             </section>
-        </main>
+        </section>
+
+        <!-- Edicion de Registro de Citas -->
+        <section v-else>
+            <section class="bg-gray-100">
+                <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+                    <div
+                        class="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12"
+                    >
+                        <form action="#" class="space-y-4">
+                            <div>
+                                <label class="sr-only" for="name">Name</label>
+                                <input
+                                    class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                    placeholder="Name"
+                                    type="text"
+                                    id="name"
+                                />
+                            </div>
+
+                            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                <div>
+                                    <label class="sr-only" for="email"
+                                        >Email</label
+                                    >
+                                    <input
+                                        class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                        placeholder="Email address"
+                                        type="email"
+                                        id="email"
+                                    />
+                                </div>
+
+                                <div>
+                                    <label class="sr-only" for="phone"
+                                        >Phone</label
+                                    >
+                                    <input
+                                        class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                        placeholder="Phone Number"
+                                        type="tel"
+                                        id="phone"
+                                    />
+                                </div>
+                            </div>
+
+                            <div
+                                class="grid grid-cols-1 gap-4 text-center sm:grid-cols-3"
+                            >
+                                <div>
+                                    <label
+                                        for="Option1"
+                                        class="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black has-[:checked]:border-black has-[:checked]:bg-black has-[:checked]:text-white"
+                                        tabindex="0"
+                                    >
+                                        <input
+                                            class="sr-only"
+                                            id="Option1"
+                                            type="radio"
+                                            tabindex="-1"
+                                            name="option"
+                                        />
+
+                                        <span class="text-sm"> Option 1 </span>
+                                    </label>
+                                </div>
+
+                                <div>
+                                    <label
+                                        for="Option2"
+                                        class="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black has-[:checked]:border-black has-[:checked]:bg-black has-[:checked]:text-white"
+                                        tabindex="0"
+                                    >
+                                        <input
+                                            class="sr-only"
+                                            id="Option2"
+                                            type="radio"
+                                            tabindex="-1"
+                                            name="option"
+                                        />
+
+                                        <span class="text-sm"> Option 2 </span>
+                                    </label>
+                                </div>
+
+                                <div>
+                                    <label
+                                        for="Option3"
+                                        class="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black has-[:checked]:border-black has-[:checked]:bg-black has-[:checked]:text-white"
+                                        tabindex="0"
+                                    >
+                                        <input
+                                            class="sr-only"
+                                            id="Option3"
+                                            type="radio"
+                                            tabindex="-1"
+                                            name="option"
+                                        />
+
+                                        <span class="text-sm"> Option 3 </span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="sr-only" for="message"
+                                    >Message</label
+                                >
+
+                                <textarea
+                                    class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                    placeholder="Message"
+                                    rows="8"
+                                    id="message"
+                                ></textarea>
+                            </div>
+
+                            <!-- Botones -->
+                            <div class="mt-4">
+                                <button
+                                    class="inline-block w-full rounded-lg bg-[#111827] px-5 mx-5 py-3 font-medium text-white sm:w-auto hover:bg-gray-600"
+                                    type="submit"
+                                >
+                                    Actualizar
+                                </button>
+                                <button
+                                    class="inline-block w-full rounded-lg bg-[#C62828] px-5 py-3 font-medium text-white sm:w-auto hover:bg-red-400"
+                                    type="button"
+                                    @click="resetForm"
+                                >
+                                    Cancelar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </section>
     </AuthenticatedLayout>
 </template>
+
+<script setup>
+import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
+import { Head } from "@inertiajs/vue3";
+import { ref } from "vue";
+import IconEdit from "../Icons/Edit.vue";
+import IconTrash from "../Icons/Trash.vue";
+
+const props = defineProps({
+    citas: {
+        type: Object,
+    },
+});
+
+//Codigo para Actualizar
+const editingCita = ref(false);
+
+// Rellena el form con los datos de la cita seleccionado
+function editCita() {
+    editingCita.value = true; //Muestra el formulario de ediccion
+}
+
+//Envia el form
+function submitForm() {
+    editingCita.value = false; //Oculta el form
+}
+
+// Resetea el form al cancelar
+function resetForm() {
+    editingCita.value = false; // Oculta el form
+}
+</script>
