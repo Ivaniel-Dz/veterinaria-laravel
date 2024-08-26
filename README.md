@@ -57,9 +57,9 @@ npm run dev
 npm install -D prettier prettier-plugin-tailwindcss
 ```
 
-7. Instalación de axios para el form
+7. Instalación de inertia
 ```bash
-npm install axios
+npm install @inertiajs/inertia @inertiajs/inertia-vue3
 ```
 
 Crear el archivo `.prettierrc.js` en el proyecto y dentro solo agregar `{}`

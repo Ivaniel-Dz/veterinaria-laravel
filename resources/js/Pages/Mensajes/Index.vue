@@ -30,8 +30,7 @@
                         <!-- Search -->
                         <div class="block relative">
                             <!-- Icon -->
-                            <span
-                                class="h-full absolute inset-y-0 left-0 flex items-center pl-2">
+                            <span class="h-full absolute inset-y-0 left-0 flex items-center pl-2">
                                 <svg
                                     viewBox="0 0 24 24"
                                     class="h-4 w-4 fill-current text-gray-500">
@@ -103,7 +102,7 @@
                                         <!-- Botones de accion -->
                                         <td class="border-b border-gray-200 bg-white px-5 py-5 text-sm flex inline-block">
                                             <button class="hover:text-red-900"
-                                                    @click="deleteMessage(msg.id)">
+                                                    @click="confirmDelete(msg.id)">
                                                 <IconTrash class="hover:stroke-[#d51818]"/>
                                             </button>
                                         </td>
@@ -135,6 +134,18 @@
                     </div>
                 </div>
             </section>
+
+            <!-- Modal de confirmación -->
+            <div v-if="showModal" class="fixed inset-0 z-50 overflow-auto bg-smoke-light flex">
+                <div class="relative p-8 bg-white w-full max-w-md m-auto flex-col flex rounded-lg">
+                    <div class="text-center text-lg font-bold mb-4">Confirmar Eliminación</div>
+                    <p class="mb-4">¿Estás seguro de que deseas eliminar este mensaje?</p>
+                    <div class="flex justify-end">
+                        <button @click="showModal = false" class="px-4 py-2 mr-2 text-gray-700 bg-gray-200 rounded">Cancelar</button>
+                        <button @click="deleteMessage" class="px-4 py-2 text-white bg-red-600 rounded">Eliminar</button>
+                    </div>
+                </div>
+            </div>
             
         </main>
 
@@ -142,14 +153,35 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
+import { Inertia } from '@inertiajs/inertia';
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import { Head } from "@inertiajs/vue3";
 import IconTrash from "../Icons/Trash.vue";
 
-// Instacia de Mensaje para mostrar
+// Instancia de Mensaje para mostrar
 const props = defineProps({
     mensajes: {
         type: Object,
     },
 });
+
+// Modal de confirmación
+const showModal = ref(false);
+const mensajeIdToDelete = ref(null);
+
+// Confirmar eliminación
+const confirmDelete = (id) => {
+    mensajeIdToDelete.value = id;
+    showModal.value = true;
+};
+
+// Eliminar mensaje
+const deleteMessage = () => {
+    Inertia.delete(route('mensajes.destroy', mensajeIdToDelete.value), {
+        onSuccess: () => {
+            showModal.value = false;  // Cerrar el modal
+        }
+    });
+};
 </script>
