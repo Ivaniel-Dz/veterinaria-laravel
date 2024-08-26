@@ -6,7 +6,6 @@
 - Inertia
 - Mysql
 - Tailwind
-- axios
 
 ## Instalación
 1. Creación del proyecto

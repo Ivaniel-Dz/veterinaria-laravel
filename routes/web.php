@@ -31,7 +31,7 @@ Route::get('/dashboard', function () {
 // Rutas de Dashboard protegidas con autenticación
 Route::middleware('auth')->group(function () {
     //Ruta sin controlador 
-    Route::get('/service', fn () => Inertia::render('Servicios/Service'))->name('service');
+    Route::get('service', fn () => Inertia::render('Servicios/Service'))->name('service');
 
     //Rutas usando controladores
     Route::get('users', [UserController::class, 'index'])->name('users.index');

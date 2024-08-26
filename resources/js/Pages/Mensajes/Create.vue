@@ -20,6 +20,7 @@
                     id="name"
                     v-model="form.nombre"
                     class="w-full bg-white rounded border border-gray-300 focus:border-[#3E9392] focus:ring-1 focus:ring-[#3E9392] text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    required
                 />
             </div>
 
@@ -34,6 +35,7 @@
                     id="email"
                     v-model="form.email"
                     class="w-full bg-white rounded border border-gray-300 focus:border-[#3E9392] focus:ring-1 focus:ring-[#3E9392] text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    required
                 />
             </div>
 
@@ -47,6 +49,7 @@
                     id="message"
                     v-model="form.descripcion"
                     class="w-full bg-white rounded border border-gray-300 focus:border-[#3E9392] focus:ring-1 focus:ring-[#3E9392] h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                    required
                 ></textarea>
             </div>
 

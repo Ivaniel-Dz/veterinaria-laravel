@@ -51,7 +51,7 @@ class MensajeController extends Controller
         $mensaje = Mensaje::findOrFail($id);
         $mensaje->delete();
 
-        return response()->json(['message' => 'Mensaje eliminado exitosamente.']);
+        return redirect()->route('mensajes.index');
     }
 
 }
