@@ -5,105 +5,143 @@
                 class="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12"
             >
                 <form action="#" class="space-y-4">
-                    <div>
-                        <label class="sr-only" for="name">Name</label>
-                        <input
-                            class="w-full rounded-lg border-gray-200 p-3 text-sm"
-                            placeholder="Name"
-                            type="text"
-                            id="name"
-                        />
-                    </div>
-
+                    <!-- Información del Dueño -->
                     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                         <div>
-                            <label class="sr-only" for="email">Email</label>
+                            <label class="sr-only" for="name">Nombre del Dueño</label>
                             <input
                                 class="w-full rounded-lg border-gray-200 p-3 text-sm"
-                                placeholder="Email address"
-                                type="email"
-                                id="email"
+                                placeholder="Nombre del Dueño"
+                                type="text"
+                                id="name"
                             />
                         </div>
 
                         <div>
-                            <label class="sr-only" for="phone">Phone</label>
+                            <label class="sr-only" for="direccion"
+                                >Dirección</label
+                            >
                             <input
                                 class="w-full rounded-lg border-gray-200 p-3 text-sm"
-                                placeholder="Phone Number"
+                                placeholder="Dirección"
+                                type="text"
+                                id="direccion"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- Conctacto -->
+                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                        <div>
+                            <label class="sr-only" for="phone"
+                                >Numero de Telefono</label
+                            >
+                            <input
+                                class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                placeholder="Numero de Telefonor"
                                 type="tel"
                                 id="phone"
                             />
                         </div>
-                    </div>
-
-                    <div
-                        class="grid grid-cols-1 gap-4 text-center sm:grid-cols-3"
-                    >
-                        <div>
-                            <label
-                                for="Option1"
-                                class="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black has-[:checked]:border-black has-[:checked]:bg-black has-[:checked]:text-white"
-                                tabindex="0"
-                            >
-                                <input
-                                    class="sr-only"
-                                    id="Option1"
-                                    type="radio"
-                                    tabindex="-1"
-                                    name="option"
-                                />
-
-                                <span class="text-sm"> Option 1 </span>
-                            </label>
-                        </div>
 
                         <div>
-                            <label
-                                for="Option2"
-                                class="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black has-[:checked]:border-black has-[:checked]:bg-black has-[:checked]:text-white"
-                                tabindex="0"
+                            <label class="sr-only" for="celular"
+                                >Numero de Celular</label
                             >
-                                <input
-                                    class="sr-only"
-                                    id="Option2"
-                                    type="radio"
-                                    tabindex="-1"
-                                    name="option"
-                                />
-
-                                <span class="text-sm"> Option 2 </span>
-                            </label>
-                        </div>
-
-                        <div>
-                            <label
-                                for="Option3"
-                                class="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black has-[:checked]:border-black has-[:checked]:bg-black has-[:checked]:text-white"
-                                tabindex="0"
-                            >
-                                <input
-                                    class="sr-only"
-                                    id="Option3"
-                                    type="radio"
-                                    tabindex="-1"
-                                    name="option"
-                                />
-
-                                <span class="text-sm"> Option 3 </span>
-                            </label>
+                            <input
+                                class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                placeholder="Numero de Celular"
+                                type="tel"
+                                id="celular"
+                            />
                         </div>
                     </div>
 
-                    <div>
-                        <label class="sr-only" for="message">Message</label>
+                    <!-- Informacion de la Mascota -->
+                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                        <div>
+                            <label class="sr-only" for="mascota"
+                                >Nombre de la Mascota</label
+                            >
+                            <input
+                                class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                placeholder="Nombre de la Mascota"
+                                type="text"
+                                id="mascota"
+                            />
+                        </div>
 
-                        <textarea
-                            class="w-full rounded-lg border-gray-200 p-3 text-sm"
-                            placeholder="Message"
-                            rows="8"
-                            id="message"
-                        ></textarea>
+                        <div>
+                            <label class="sr-only" for="fecha_nacimiento">Fecha de Nacimiento</label>
+                            <input
+                                class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                placeholder="Fecha de Nacimiento"
+                                type="date"
+                                id="fecha_nacimiento"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- Servicio -->
+                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                        <div>
+                            <label class="sr-only" for="transporte"
+                                >Transporte</label
+                            >
+                            <input
+                                class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                placeholder="Transporte"
+                                type="text"
+                                id="transporte"
+                            />
+                        </div>
+
+                        <div>
+                            <label class="sr-only" for="servicio"
+                                >Servicio</label
+                            >
+                            <input
+                                class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                placeholder="Servicio"
+                                type="text"
+                                id="servicio"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- Horario -->
+                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                        <div>
+                            <label class="sr-only" for="fecha"
+                                >Fecha de la Cita</label
+                            >
+                            <input
+                                class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                placeholder="Fecha de la Cita"
+                                type="date"
+                                id="fecha"
+                            />
+                        </div>
+
+                        <div>
+                            <label class="sr-only" for="hora">Hora</label>
+                            <input
+                                class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                placeholder="Hora de la Cita"
+                                type="time"
+                                id="hora"
+                            />
+                        </div>
+
+                        <div>
+                            <label class="sr-only" for="estado">Estado</label>
+                            <select name="estado" id="estado">
+                                <option value="">Pendiente</option>
+                                <option value="">Atendido</option>
+                                <option value="">Cancelado</option>
+                                <option value="">Pospuesto</option>
+                            </select>
+                        </div>
                     </div>
 
                     <!-- Botones -->
@@ -128,15 +166,14 @@
     </section>
 </template>
 
-
 <script setup>
 //`defineProps` es una macro del compilador y ya no es necesario importarla.
 
 // Definir las props utilizando defineProps
 const props = defineProps({
-  resetForm: {
-    type: Function, // Asegúrate de que la prop sea una función
-    required: true,
-  },
+    resetForm: {
+        type: Function, // Asegúrate de que la prop sea una función
+        required: true,
+    },
 });
 </script>

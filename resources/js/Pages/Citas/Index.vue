@@ -374,13 +374,14 @@ import IconEdit from "../Icons/Edit.vue";
 import IconTrash from "../Icons/Trash.vue";
 import Edit from "./Edit.vue";
 
+// Definir las props utilizando defineProps
 const props = defineProps({
     citas: {
         type: Object,
     },
 });
 
-//Codigo para Actualizar
+// Crear una variable reactiva para el estado de edición
 const editingCita = ref(false);
 
 // Rellena el form con los datos de la cita seleccionado
