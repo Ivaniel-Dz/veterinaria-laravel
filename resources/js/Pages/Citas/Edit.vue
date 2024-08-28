@@ -1,0 +1,142 @@
+<template>
+    <section class="bg-gray-100">
+        <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+            <div
+                class="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12"
+            >
+                <form action="#" class="space-y-4">
+                    <div>
+                        <label class="sr-only" for="name">Name</label>
+                        <input
+                            class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                            placeholder="Name"
+                            type="text"
+                            id="name"
+                        />
+                    </div>
+
+                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                        <div>
+                            <label class="sr-only" for="email">Email</label>
+                            <input
+                                class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                placeholder="Email address"
+                                type="email"
+                                id="email"
+                            />
+                        </div>
+
+                        <div>
+                            <label class="sr-only" for="phone">Phone</label>
+                            <input
+                                class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                placeholder="Phone Number"
+                                type="tel"
+                                id="phone"
+                            />
+                        </div>
+                    </div>
+
+                    <div
+                        class="grid grid-cols-1 gap-4 text-center sm:grid-cols-3"
+                    >
+                        <div>
+                            <label
+                                for="Option1"
+                                class="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black has-[:checked]:border-black has-[:checked]:bg-black has-[:checked]:text-white"
+                                tabindex="0"
+                            >
+                                <input
+                                    class="sr-only"
+                                    id="Option1"
+                                    type="radio"
+                                    tabindex="-1"
+                                    name="option"
+                                />
+
+                                <span class="text-sm"> Option 1 </span>
+                            </label>
+                        </div>
+
+                        <div>
+                            <label
+                                for="Option2"
+                                class="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black has-[:checked]:border-black has-[:checked]:bg-black has-[:checked]:text-white"
+                                tabindex="0"
+                            >
+                                <input
+                                    class="sr-only"
+                                    id="Option2"
+                                    type="radio"
+                                    tabindex="-1"
+                                    name="option"
+                                />
+
+                                <span class="text-sm"> Option 2 </span>
+                            </label>
+                        </div>
+
+                        <div>
+                            <label
+                                for="Option3"
+                                class="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black has-[:checked]:border-black has-[:checked]:bg-black has-[:checked]:text-white"
+                                tabindex="0"
+                            >
+                                <input
+                                    class="sr-only"
+                                    id="Option3"
+                                    type="radio"
+                                    tabindex="-1"
+                                    name="option"
+                                />
+
+                                <span class="text-sm"> Option 3 </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="sr-only" for="message">Message</label>
+
+                        <textarea
+                            class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                            placeholder="Message"
+                            rows="8"
+                            id="message"
+                        ></textarea>
+                    </div>
+
+                    <!-- Botones -->
+                    <div class="mt-4">
+                        <button
+                            class="inline-block w-full rounded-lg bg-[#111827] px-5 mx-5 py-3 font-medium text-white sm:w-auto hover:bg-gray-600"
+                            type="submit"
+                        >
+                            Actualizar
+                        </button>
+                        <button
+                            class="inline-block w-full rounded-lg bg-[#C62828] px-5 py-3 font-medium text-white sm:w-auto hover:bg-red-400"
+                            type="button"
+                            @click="resetForm"
+                        >
+                            Cancelar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</template>
+
+
+<script setup>
+//`defineProps` es una macro del compilador y ya no es necesario importarla.
+
+// Definir las props utilizando defineProps
+const props = defineProps({
+  resetForm: {
+    type: Function, // Asegúrate de que la prop sea una función
+    required: true,
+  },
+});
+</script>
