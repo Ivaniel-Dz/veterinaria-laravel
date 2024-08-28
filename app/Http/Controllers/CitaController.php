@@ -17,7 +17,7 @@ class CitaController extends Controller
     public function index()
     {
         return Inertia::render('Citas/Index', [
-            'citas' => Cita::with(['propietario', 'mascota', 'servicio'])->paginate()
+            'citas' => Cita::with(['propietario', 'mascota', 'servicio'])->paginate(5)
         ]);
     }
 
@@ -86,6 +86,16 @@ class CitaController extends Controller
             return response()->json(['message' => 'Ocurrió un error al guardar la cita.'], 500);
         }
     }
+
+     // Muestra el formulario de edición para una cita específica
+    public function edit($id)
+    {
+        $cita = Cita::with(['propietario', 'mascota', 'servicio'])->findOrFail($id);
+
+        return Inertia::render('Citas/Edit', [
+            'cita' => $cita
+        ]);
+    }    
 
     // Actualizar datos (PUT)
 

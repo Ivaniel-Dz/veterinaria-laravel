@@ -203,10 +203,6 @@ php artisan db:seed
 npm install
 ```
 
-```bash
-npm install axios
-```
-
 8. Ejecuta el servidor de vite
 ```bash
 npm run dev

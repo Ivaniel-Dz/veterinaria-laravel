@@ -294,16 +294,16 @@
                                 class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm focus:border-[#3E9392] focus:ring-1 focus:ring-[#3E9392]"
                             >
                                 <option value="">Seleccione una opción</option>
-                                <option value="consulta">
+                                <option value="Consulta general">
                                     Consulta general
                                 </option>
-                                <option value="vacunacion">Vacunación</option>
-                                <option value="desparasitacion">
+                                <option value="Vacunación">Vacunación</option>
+                                <option value="Desparasitación">
                                     Desparasitación
                                 </option>
-                                <option value="cirugia">Cirugía</option>
-                                <option value="odontologia">Odontología</option>
-                                <option value="peluqueria">Peluquería</option>
+                                <option value="Cirugía">Cirugía</option>
+                                <option value="Odontología">Odontología</option>
+                                <option value="Peluquería">Peluquería</option>
                             </select>
 
                             <label
@@ -319,9 +319,9 @@
                                 <option value="No transporte">
                                     No lo deseo
                                 </option>
-                                <option value="id vuelta">Ida y Vuelta</option>
-                                <option value="ida">Solo Ida</option>
-                                <option value="vuelta">Solo Vuelta</option>
+                                <option value="Ida y Vuelta">Ida y Vuelta</option>
+                                <option value="Solo Ida">Solo Ida</option>
+                                <option value="Solo Vuelta">Solo Vuelta</option>
                             </select>
                         </div>
 

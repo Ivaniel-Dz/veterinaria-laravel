@@ -284,7 +284,7 @@
                                         >
                                             <button
                                                 class="hover:text-red-900"
-                                                @click="editCita(cita)"
+                                                @click="editCita(cita.id)"
                                             >
                                                 <IconEdit
                                                     class="hover:stroke-[#0980f0]"
@@ -314,11 +314,13 @@
                                 <div class="inline-flex mt-2 xs:mt-0">
                                     <button
                                         class="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-l"
+                                         @click="previousPage" :disabled="!citas.prev_page_url"
                                     >
                                         Prev
                                     </button>
                                     <button
                                         class="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-r"
+                                        @click="nextPage" :disabled="!citas.next_page_url"
                                     >
                                         Next
                                     </button>
@@ -374,18 +376,20 @@ import IconEdit from "../Icons/Edit.vue";
 import IconTrash from "../Icons/Trash.vue";
 import Edit from "./Edit.vue";
 
-// Definir las props utilizando defineProps
+// los props utilizados en Index
 const props = defineProps({
     citas: {
-        type: Object,
+        type: Object, // Datos de la tabla
     },
 });
 
 // Crear una variable reactiva para el estado de edición
 const editingCita = ref(false);
 
-// Rellena el form con los datos de la cita seleccionado
-function editCita() {
+
+/************  Funcion para abrir el Editor de form ****************/
+function editCita(id) {
+    Inertia.get(route('citas.edit', id));
     editingCita.value = true; //Muestra el formulario de ediccion
 }
 
@@ -421,4 +425,19 @@ function confirmDelete() {
     }
     closeModal();
 }
+
+
+/*********************  Paginación *********************************/
+const nextPage = () => {
+  if (props.citas.next_page_url) {
+    Inertia.visit(props.citas.next_page_url);
+  }
+};
+
+const previousPage = () => {
+  if (props.citas.prev_page_url) {
+    Inertia.visit(props.citas.prev_page_url);
+}
+};
+
 </script>
