@@ -12,7 +12,7 @@
         <figure
             v-for="servicio in servicios"
             :key="servicio.servicio"
-            class="md:p-4 shadow dark:bg-gray-700 bg-gray-100 p-6 rounded-lg"
+            class="md:p-4 shadow dark:bg-color-box-dark bg-color-box p-6 rounded-lg"
         >
             <div class="flex items-center justify-center">
                 <img

@@ -14,7 +14,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <div class="dark:bg-gray-800 bg-[#FBFBFE]">
+    <div class="dark:bg-color-dark bg-color-main">
         <Menu :loginUrl="loginUrl" />
         <!---Envia el parametro al componente Menu -->
         <Home />

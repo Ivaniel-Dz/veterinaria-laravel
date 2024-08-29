@@ -2,7 +2,7 @@
 
     <section
         id="inicio"
-        class="bg-gradient-to-b from-teal-500 to-green-40 dark:text-white w-full h-auto flex gap-8 flex-wrap-reverse p-4 justify-center">
+        class="dark:bg-color-home-dark bg-color-home dark:text-white text-color-text-dark w-full flex gap-8 flex-wrap-reverse py-[130px] lg:px-28 justify-center">
 
         <article class="md:flex-grow-0 md:basis-[300px] lg:basis-[500px] xl:basis-[800px] lg:py-6">
             <h2 class="text-3xl md:text-4xl font-semibold lg:pt-20 md:pt-16">
@@ -19,7 +19,7 @@
             
             <!-- Btn -->
             <div class="py-8">
-                <a href="#cita" class="w-180px h-50px text-[0.97em] text-center bg-[#3E9392] text-white py-3 px-5 rounded-full hover:shadow-none transition-all ease-in duration-500">
+                <a href="#cita" class="dark:text-color-text w-180px h-50px font-semibold text-center text-color-text bg-color-btn-dark py-3 px-5 rounded-full hover:shadow-none transition-all ease-in duration-500">
                     Reservar Cita
                 </a>
             </div>
