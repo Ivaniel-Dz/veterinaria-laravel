@@ -47,7 +47,8 @@ Route::middleware('auth')->group(function () {
 
     // Rutas para Citas
     Route::get('citas', [CitaController::class, 'index'])->name('citas.index'); // ruta Mostrar
-    Route::get('citas/{id}/edit', [CitaController::class, 'edit'])->name('citas.edit'); // Ruta para editar una cita
+    Route::get('citas/edit/{id}', [CitaController::class, 'edit'])->name('citas.edit'); // Ruta para ingresar por id a Edit
+    Route::put('/citas/{id}', [CitaController::class, 'update'])->name('citas.update'); // Ruta para actualizar en form
     Route::delete('citas/{id}', [CitaController::class, 'destroy'])->name('citas.destroy'); // ruta para Eliminar
 
 });

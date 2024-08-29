@@ -4,7 +4,6 @@
     <AuthenticatedLayout>
         <!-- Tabla de Registro de Citas -->
         <section
-            v-if="!editingCita"
             class="bg-white overflow-hidden shadow-sm sm:rounded-lg"
         >
             <!-- Component -->
@@ -282,14 +281,10 @@
                                         <td
                                             class="border-b border-gray-200 bg-white px-5 py-5 text-sm flex inline-block"
                                         >
-                                            <button
-                                                class="hover:text-red-900"
-                                                @click="editCita(cita.id)"
-                                            >
-                                                <IconEdit
-                                                    class="hover:stroke-[#0980f0]"
-                                                />
-                                            </button>
+                                            <Link :href="route('citas.edit', cita.id)" class="btn btn-primary">
+                                            <IconEdit
+                                                class="hover:stroke-[#0980f0]"/>
+                                            </Link>
 
                                             <button
                                                 class="hover:text-red-900"
@@ -359,15 +354,11 @@
         
         </section>
 
-        <!-- Edicion de Registro de Citas -->
-        <section v-else>
-            <Edit :resetForm="resetForm"/>
-        </section>
-
     </AuthenticatedLayout>
 </template>
 
 <script setup>
+import { Link } from '@inertiajs/vue3';
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import { Inertia } from "@inertiajs/inertia";
 import { Head } from "@inertiajs/vue3";
@@ -382,21 +373,6 @@ const props = defineProps({
         type: Object, // Datos de la tabla
     },
 });
-
-// Crear una variable reactiva para el estado de edición
-const editingCita = ref(false);
-
-
-/************  Funcion para abrir el Editor de form ****************/
-function editCita(id) {
-    Inertia.get(route('citas.edit', id));
-    editingCita.value = true; //Muestra el formulario de ediccion
-}
-
-// Resetea el form al cancelar
-function resetForm() {
-    editingCita.value = false; // Oculta el form
-}
 
 /*********** Eliminar Filas **********************/
 const showModal = ref(false);

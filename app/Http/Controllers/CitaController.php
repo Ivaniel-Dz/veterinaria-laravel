@@ -91,13 +91,31 @@ class CitaController extends Controller
     public function edit($id)
     {
         $cita = Cita::with(['propietario', 'mascota', 'servicio'])->findOrFail($id);
-
-        return Inertia::render('Citas/Edit', [
-            'cita' => $cita
-        ]);
-    }    
+        return Inertia::render('Citas/Edit', ['cita' => $cita,]);
+    }
 
     // Actualizar datos (PUT)
+public function update(Request $request, $id)
+{
+    $request->validate([
+        'mascota' => 'required|string|max:50',
+        'fecha_nacimiento' => 'required|date',
+        'nombre' => 'required|string|max:100',
+        'celular' => 'required|string|max:15',
+        'telefono' => 'required|string|max:15',
+        'direccion' => 'required|string|max:255',
+        'servicio' => 'required|string|max:50',
+        'hora' => 'required|date_format:H:i',
+        'fecha' => 'required|date',
+        'transporte' => 'nullable|string|max:50',
+        'estado' => 'required|integer|in:1,2,3,4',
+    ]);
+
+    $cita = Cita::findOrFail($id);
+    $cita->update($request->all());
+
+    return response()->json(['message' => 'Cita actualizada exitosamente!']);
+}
 
 
     // Eliminar datos (DELETE)

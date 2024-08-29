@@ -33,8 +33,8 @@ let showingTwoLevelMenu = ref(false);
 
         <!-- Menu -->
         <nav class="mt-10" x-data="{ isMultiLevelMenuOpen: false }">
+            
             <!-- Registro de citas -->
-
             <nav-link
                 :href="route('citas.index')"
                 :active="route().current('citas.index')"
