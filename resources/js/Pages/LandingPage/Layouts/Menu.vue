@@ -32,7 +32,9 @@ function Menu(e) {
             </span>
 
             <!-- Icon mobile -->
-            <span class="text-3xl cursor-pointer mx-2 md:hidden block">
+            <span class="text-3xl cursor-pointer mx-2 md:hidden flex">
+                <!-- Icon Dark mode -->
+                <DarkIcon class="mr-4"/>
                 <ion-icon name="menu" @click="Menu(this)"></ion-icon>
             </span>
         </div>
@@ -66,11 +68,11 @@ function Menu(e) {
             </li>
 
             <!-- Icon Dark mode -->
-            <DarkIcon />
+            <DarkIcon class="hidden md:flex"/>
             
             <!-- Boton de Dashboard -->
             <div>
-                <a class="dark:bg-color-btn-dark dark:text-color-text bg-color-btn text-color-text-dark duration-500 px-6 py-2 mx-4 hover:bg-[#71b5b7] rounded"
+                <a class="dark:bg-color-btn-dark dark:text-color-text bg-color-btn text-color-text-dark duration-500 px-6 py-2 mx-4 rounded btn-hover"
                 :href="loginUrl">
                     Log in
                 </a>
