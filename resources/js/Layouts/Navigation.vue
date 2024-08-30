@@ -10,8 +10,8 @@ let showingTwoLevelMenu = ref(false);
     <div
         :class="$page.props.showingMobileMenu ? 'block' : 'hidden'"
         @click="$page.props.showingMobileMenu = false"
-        class="fixed inset-0 z-20 bg-black opacity-50 transition-opacity lg:hidden"
-    ></div>
+        class="fixed inset-0 z-20 bg-black opacity-50 transition-opacity lg:hidden">
+    </div>
 
     <aside
         :class="
@@ -19,15 +19,14 @@ let showingTwoLevelMenu = ref(false);
                 ? 'translate-x-0 ease-out'
                 : '-translate-x-full ease-in'
         "
-        class="overflow-y-auto fixed inset-y-0 left-0 z-30 w-64 bg-color-dark transition duration-300 transform lg:translate-x-0 lg:static lg:inset-0"
-    >
+        class="overflow-y-auto fixed inset-y-0 left-0 z-30 w-64 bg-color-dark transition duration-300 transform lg:translate-x-0 lg:static lg:inset-0">
         <div class="flex justify-center items-center mt-8">
             <!-- logo -->
             <div class="flex items-center">
                 <PawIcon class="stroke-white" />
                 <span class="mx-2 text-2xl font-semibold text-white"
-                    >Happy Pets</span
-                >
+                    >Happy Pets
+                </span>
             </div>
         </div>
 

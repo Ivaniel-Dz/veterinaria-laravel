@@ -1,5 +1,5 @@
 <template>
-  <section class="py-2 my-16 lg:mx-size-desk dark:bg-color-box-dark bg-color-box dark:text-color-text-dark text-color-text ">
+  <section class="py-2 my-16 mx-size-mobile md:mx-size-tablet lg:mx-size-desk dark:bg-color-box-dark bg-color-box dark:text-color-text-dark text-color-text ">
     <div class="mb-10 md:mx-auto sm:text-center md:mb-10">
         <!-- Imagen -->
         <div class="rounded-lg h-64 overflow-hidden mb-6">
