@@ -456,6 +456,15 @@
                 </button>
             </fieldset>
         </form>
+
+        <ModalAlert
+          :visible="showModal"
+          :title="modalTitle"
+          :message="modalMessage"
+          :type="modalType"
+          @close="showModal = false"
+        />
+
     </section>
 </template>
 
@@ -525,7 +534,22 @@ textarea:valid {
 
 <script setup>
 import { reactive, ref } from "vue";
+import ModalAlert from "../Modal/ModalAlert.vue";
 
+// Modal de alerta
+const showModal = ref(false);
+const modalType = ref('');
+const modalTitle = ref('');
+const modalMessage = ref('');
+
+const showTemporaryModal = (title, message, type) => {
+  modalTitle.value = title;
+  modalMessage.value = message;
+  modalType.value = type;
+  showModal.value = true;
+};
+
+// Formulario diseño
 $(document).ready(function () {
     let current_fs, next_fs, previous_fs; //fieldsets
     let opacity;
@@ -608,8 +632,8 @@ $(document).ready(function () {
     });
 });
 
-// Script para enviar el formulario
-// Formulario reactivo
+
+// Instancia los datos capturados pro Input
 const form = reactive({
     mascota: "",
     especie: "",
@@ -631,7 +655,7 @@ const form = reactive({
 // Objeto de errores
 const errors = ref({});
 
-// Función para enviar el formulario
+// Enviar registro a la BD
 async function submitForm() {
     try {
         const response = await fetch("/citas", {
@@ -654,13 +678,13 @@ async function submitForm() {
                 throw new Error("Ocurrió un error al guardar la cita.");
             }
         } else {
-            alert("¡Cita guardada exitosamente!");
+            showTemporaryModal('¡Éxito!', 'Mensaje enviado exitosamente', 'success'); // Modal alert exito
             // Limpiar formulario después del envío
             Object.keys(form).forEach((key) => (form[key] = ""));
             errors.value = {};
         }
     } catch (error) {
-        alert(error.message);
+        showTemporaryModal('¡Error!', 'Hubo un error en la conexión. Por favor, inténtelo de nuevo.', 'error'); // Modal para error de conexion
     }
 }
 </script>

@@ -37,7 +37,7 @@ const closeModal = () => {
   emit('close');
 };
 
-// Observador para cerrar el modal después de 3 segundos cuando se muestra
+// Observador para cerrar el modal después de 1.5 segundos cuando se muestra
 watch(
   () => props.visible,
   (newValue) => {
