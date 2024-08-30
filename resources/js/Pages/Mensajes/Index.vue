@@ -207,7 +207,8 @@ function confirmDelete() {
     if (mensajeId.value) {
         Inertia.delete(route('mensajes.destroy', mensajeId.value), {
             onFinish: () => {
-                window.location.reload();  // Recargar la página después de eliminar
+                // Recargar la página después de eliminar
+                window.location.reload();
             }
         });
     }

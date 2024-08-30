@@ -326,31 +326,13 @@
                 </div>
             </section>
 
-            <!-- Modal -->
-            <div
-                v-if="showModal"
-                class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
-            >
-                <div class="bg-white p-6 rounded shadow-md">
-                    <h3 class="text-lg text-gray-900 font-semibold mb-4">
-                        ¿Estás seguro de que quieres eliminar este mensaje?
-                    </h3>
-                    <div class="flex justify-end">
-                        <button
-                            @click="confirmDelete"
-                            class="bg-red-500 text-white px-4 py-2 rounded mr-2 hover:bg-[#d51818]"
-                        >
-                            Eliminar
-                        </button>
-                        <button
-                            @click="closeModal"
-                            class="bg-gray-300 px-4 py-2 rounded hover:bg-gray-400"
-                        >
-                            Cancelar
-                        </button>
-                    </div>
-                </div>
-            </div>
+     <!-- Modal de Confirmación -->
+            <ModalConfirm
+                :visible="showModal"
+                :message="modalMessage"
+                :eliminar="confirmDelete"
+                :close="closeModal"
+            />
         
         </section>
 
@@ -365,7 +347,7 @@ import { Head } from "@inertiajs/vue3";
 import { ref } from "vue";
 import IconEdit from "../Icons/Edit.vue";
 import IconTrash from "../Icons/Trash.vue";
-import Edit from "./Edit.vue";
+import ModalConfirm from "../Modal/ModalConfirm.vue";
 
 // los props utilizados en Index
 const props = defineProps({
@@ -374,13 +356,17 @@ const props = defineProps({
     },
 });
 
-/*********** Eliminar Filas **********************/
+// Modal confirmación
 const showModal = ref(false);
+const modalMessage = ref('');
+
+// id del mensaje a eliminar
 const citaId = ref(null);
 
 // Abrir modal
 function openModal(id) {
     citaId.value = id;
+    modalMessage.value = '¿Estás seguro de que quieres eliminar este mensaje?';
     showModal.value = true;
 }
 
@@ -395,10 +381,13 @@ function confirmDelete() {
     if (citaId.value) {
         Inertia.delete(route("citas.destroy", citaId.value), {
             onFinish: () => {
-                window.location.reload(); // Recargar la página después de eliminar
+                // Recargar la página después de eliminar
+                window.location.reload();
             },
         });
     }
+
+    // Ejecución de la Función
     closeModal();
 }
 
