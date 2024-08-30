@@ -1,10 +1,7 @@
 <template>
-    <section
-        id="cita"
-        class="m-4 mt-24 md:px-[115px] lg:px-[115px] dark:text-white"
-    >
-        <h2 class="text-2xl sm:text-3xl font-medium">Formulario de cita</h2>
-        <p class="leading-relaxed text-base dark:text-white">
+    <section id="cita" class="dark:text-color-text-dark text-color-text px-size-mobile md:px-size-tablet lg:px-size-desk py-20">
+        <h2 class="text-3xl font-bold leading-5 pb-4">Formulario de cita</h2>
+        <p class="leading-relaxed text-lg dark:text-white">
             Por favor, complete el siguiente formulario para agendar una cita
             para su mascota.
         </p>
@@ -14,39 +11,28 @@
             <!-- barra de progreso -->
             <ul
                 id="progressbar"
-                class="mb-[30px] overflow-hidden text-gray-400"
-            >
-                <li
-                    class="active text-[#3E9392] list-none text-base w-3/12 float-left font-semibold before:font-[FontAwesome] before:content-['\f6d3']"
-                >
+                class="mb-5 overflow-hidden text-gray-500">
+                <li class="active text-color-btn list-none text-lg w-3/12 float-left font-semibold before:font-[FontAwesome] before:content-['\f6d3']">
                     Mascota
                 </li>
-                <li
-                    class="list-none text-base w-3/12 float-left font-semibold before:font-[FontAwesome] before:content-['\f007']"
-                >
+                <li class="list-none text-lg w-3/12 float-left font-semibold before:font-[FontAwesome] before:content-['\f007']">
                     Dueño
                 </li>
-                <li
-                    class="list-none text-base w-3/12 float-left font-semibold before:font-[FontAwesome] before:content-['\f481']"
-                >
+                <li class="list-none text-lg w-3/12 float-left font-semibold before:font-[FontAwesome] before:content-['\f481']">
                     Motivo
                 </li>
-                <li
-                    class="list-none text-base w-3/12 float-left font-semibold before:font-[FontAwesome] before:content-['\f00c']"
-                >
+                <li class="list-none text-lg w-3/12 float-left font-semibold before:font-[FontAwesome] before:content-['\f00c']">
                     Confirmación
                 </li>
             </ul>
 
             <!-- Información de la mascota -->
-            <fieldset
-                class="shadow dark:bg-gray-700 bg-gray-100 rounded-lg px-6 pb-6"
-            >
+            <fieldset class="shadow dark:bg-color-box-dark bg-color-box rounded-lg px-2 pb-6">
                 <div>
                     <!-- Encabezado -->
-                    <div class="flex justify-between py-8 dark:text-white">
-                        <h2 class="text-xl">Información de la mascota</h2>
-                        <h2 class="text-xl">1 / 4</h2>
+                    <div class="flex justify-between py-8 ">
+                        <h2 class="text-xl font-semibold">Información de la mascota</h2>
+                        <h2 class="text-xl font-semibold">1 / 4</h2>
                     </div>
 
                     <!-- Entradas -->
@@ -172,13 +158,12 @@
 
             <!-- Informacion del dueño -->
             <fieldset
-                class="shadow dark:bg-gray-700 bg-gray-100 rounded-lg px-6 pb-6"
-            >
+                class="shadow dark:bg-color-box-dark bg-color-box rounded-lg px-6 pb-6">
                 <div>
                     <!-- Encabezado -->
                     <div class="flex justify-between py-8 dark:text-white">
-                        <h2 class="text-xl">Información del Dueño</h2>
-                        <h2 class="text-xl">2 / 4</h2>
+                        <h2 class="text-xl font-semibold">Información del Dueño</h2>
+                        <h2 class="text-xl font-semibold">2 / 4</h2>
                     </div>
 
                     <!-- Entradas -->
@@ -197,7 +182,7 @@
                                 id="nombre_propietario"
                                 v-model="form.nombre"
                                 name="nombre_propietario"
-                                class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm focus:border-[#3E9392] focus:ring-1 focus:ring-[#3E9392]"
+                                class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm focus:border-color-btn focus:ring-1 focus:ring-color-btn"
                                 required
                             />
 
@@ -211,7 +196,7 @@
                                 id="celular"
                                 name="celular"
                                 v-model="form.celular"
-                                class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm focus:border-[#3E9392] focus:ring-1 focus:ring-[#3E9392]"
+                                class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm focus:border-color-btn focus:ring-1 focus:ring-color-btn"
                                 required
                             />
                         </div>
@@ -230,7 +215,7 @@
                                 id="telefono"
                                 name="telefono"
                                 v-model="form.telefono"
-                                class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm focus:border-[#3E9392] focus:ring-1 focus:ring-[#3E9392]"
+                                class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm focus:border-color-btn focus:ring-1 focus:ring-color-btn"
                             />
 
                             <label
@@ -243,7 +228,7 @@
                                 id="direccion"
                                 v-model="form.direccion"
                                 name="direccion"
-                                class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm focus:border-[#3E9392] focus:ring-1 focus:ring-[#3E9392]"
+                                class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm focus:border-color-btn focus:ring-1 focus:ring-color-btn"
                                 required
                             />
                         </div>
@@ -260,20 +245,20 @@
                 <input
                     type="button"
                     name="next"
-                    class="next float-right mt-5 rounded-md border-none bg-[#3E9392] px-12 py-3 text-sm font-medium text-white cursor-pointer hover:bg-[#45AB97]"
+                    class="next float-right mt-5 rounded-md border-none bg-color-btn px-12 py-3 text-sm font-medium text-white cursor-pointer hover:bg-[#45AB97]"
                     value="Siguiente"
                 />
             </fieldset>
 
             <!-- Motivo de la cita -->
             <fieldset
-                class="shadow dark:bg-gray-700 bg-gray-100 rounded-lg px-6 pb-6"
+                class="shadow dark:bg-color-box-dark bg-color-box rounded-lg px-6 pb-6"
             >
                 <div>
                     <!-- Encabezado -->
                     <div class="flex justify-between py-8 dark:text-white">
-                        <h2 class="text-xl">Motivo de la cita</h2>
-                        <h2 class="text-xl">3 / 4</h2>
+                        <h2 class="text-xl font-semibold">Motivo de la cita</h2>
+                        <h2 class="text-xl font-semibold">3 / 4</h2>
                     </div>
 
                     <!-- Entradas -->
@@ -291,7 +276,7 @@
                                 id="services"
                                 name="services"
                                 v-model="form.servicio"
-                                class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm focus:border-[#3E9392] focus:ring-1 focus:ring-[#3E9392]"
+                                class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm focus:border-color-btn focus:ring-1 focus:ring-color-btn"
                             >
                                 <option value="">Seleccione una opción</option>
                                 <option value="Consulta general">
@@ -340,7 +325,7 @@
                                 id="fecha_cita"
                                 name="fecha_cita"
                                 v-model="form.fecha"
-                                class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm focus:border-[#3E9392] focus:ring-1 focus:ring-[#3E9392]"
+                                class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm focus:border-color-btn focus:ring-1 focus:ring-color-btn"
                                 required
                             />
 
@@ -355,7 +340,7 @@
                                 name="hora_cita"
                                 id="hora_cita"
                                 v-model="form.hora"
-                                class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm focus:border-[#3E9392] focus:ring-1 focus:ring-[#3E9392]"
+                                class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm focus:border-color-btn focus:ring-1 focus:ring-color-btn"
                             />
                         </div>
 
@@ -372,7 +357,7 @@
                                 name="comentario"
                                 id="comentario"
                                 v-model="form.comentario"
-                                class="w-full bg-white rounded border border-gray-300 focus:border-[#3E9392] focus:ring-1 focus:ring-[#3E9392] h-[105px] text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                                class="w-full bg-white rounded border border-gray-300 focus:border-color-btn focus:ring-1 focus:ring-color-btn h-[105px] text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
                             ></textarea>
                         </div>
                     </div>
@@ -388,20 +373,20 @@
                 <input
                     type="button"
                     name="next"
-                    class="next float-right mt-5 rounded-md border-none bg-[#3E9392] px-12 py-3 text-sm font-medium text-white cursor-pointer hover:bg-[#45AB97]"
+                    class="next float-right mt-5 rounded-md border-none bg-color-btn px-12 py-3 text-sm font-medium text-white cursor-pointer hover:bg-[#45AB97]"
                     value="Siguiente"
                 />
             </fieldset>
 
             <!-- Terminar -->
             <fieldset
-                class="shadow dark:bg-gray-700 bg-gray-100 rounded-lg px-6 pb-6"
+                class="shadow dark:bg-color-box-dark bg-color-box rounded-lg px-6 pb-6"
             >
                 <div>
                     <!-- Titulo -->
                     <div class="flex justify-between py-8 dark:text-white">
-                        <h2 class="text-xl">Confirmación!</h2>
-                        <h2 class="text-xl">4 / 4</h2>
+                        <h2 class="text-xl font-semibold">Confirmación!</h2>
+                        <h2 class="text-xl font-semibold">4 / 4</h2>
                     </div>
 
                     <!-- Contenedor -->
@@ -460,7 +445,7 @@
 
                 <button
                     type="submit"
-                    class="float-right mt-5 rounded-md border-none bg-[#3E9392] px-12 py-3 text-sm font-medium text-white cursor-pointer hover:bg-[#45AB97]"
+                    class="float-right mt-5 rounded-md border-none bg-color-btn px-12 py-3 text-sm font-medium text-white cursor-pointer hover:bg-[#45AB97]"
                 >
                     Confirmar
                 </button>
@@ -470,6 +455,7 @@
 </template>
 
 <style scoped>
+
 /* Quita los bordes */
 fieldset {
     border: none;
@@ -515,6 +501,17 @@ fieldset:not(:first-of-type) {
 #progressbar li.active:after {
     background: #3e9392;
 }
+
+/* Estilo cuando el input es inválido */
+input,select,textarea:invalid {
+    border-color: #F44336; /* Rojo */
+}
+
+        /* Estilo cuando el input es válido */
+input:valid {
+    border-color: #008689; /* Verde */
+}
+
 </style>
 
 <script setup>
