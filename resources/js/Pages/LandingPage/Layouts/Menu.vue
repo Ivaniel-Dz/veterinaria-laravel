@@ -50,8 +50,8 @@ function Menu(e) {
             </li>
 
             <li class="md:mx-4 my-6 md:my-0">
-                <a href="#servicio" class="text-[16px] hover:text-color-home transition-all ease-in duration-500">
-                    Servicio
+                <a href="#servicios" class="text-[16px] hover:text-color-home transition-all ease-in duration-500">
+                    Servicios
                 </a>
             </li>
 

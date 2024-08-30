@@ -116,7 +116,7 @@
 
                     <!-- Botones de accion -->
                     <td
-                      class="border-b border-gray-200 bg-white px-5 py-5 text-sm flex inline-block"
+                      class="border-b border-gray-200 bg-white px-5 py-5 text-sm flex"
                     >
                       <button
                         class="hover:text-red-900"

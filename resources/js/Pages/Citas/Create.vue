@@ -67,7 +67,7 @@
                                 class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm focus:border-[#3E9392] focus:ring-1 focus:ring-[#3E9392]"
                                 required
                             >
-                                <option value="">Seleccione una especie</option>
+                                <option value="">Seleccione una opción</option>
                                 <option value="perro">Perro</option>
                                 <option value="gato">Gato</option>
                                 <option value="conejo">Conejo</option>
@@ -107,7 +107,7 @@
                                 class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm focus:border-[#3E9392] focus:ring-1 focus:ring-[#3E9392]"
                                 required
                             >
-                                <option value="">Seleccione un sexo</option>
+                                <option value="">Seleccione una opción</option>
                                 <option value="macho">Macho</option>
                                 <option value="hembra">Hembra</option>
                             </select>
@@ -151,7 +151,7 @@
                 <input
                     type="button"
                     name="next"
-                    class="next float-right mt-5 rounded-md border-none bg-[#3E9392] px-12 py-3 text-sm font-medium text-white cursor-pointer hover:bg-[#45AB97]"
+                    class="next float-right mt-5 rounded-md border-none bg-[#3E9392] px-12 py-3 text-sm font-medium text-white cursor-pointer hover:bg-[#57cc99]"
                     value="Siguiente"
                 />
             </fieldset>
@@ -245,7 +245,7 @@
                 <input
                     type="button"
                     name="next"
-                    class="next float-right mt-5 rounded-md border-none bg-color-btn px-12 py-3 text-sm font-medium text-white cursor-pointer hover:bg-[#45AB97]"
+                    class="next float-right mt-5 rounded-md border-none bg-color-btn px-12 py-3 text-sm font-medium text-white cursor-pointer hover:bg-[#57cc99]"
                     value="Siguiente"
                 />
             </fieldset>
@@ -277,6 +277,7 @@
                                 name="services"
                                 v-model="form.servicio"
                                 class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm focus:border-color-btn focus:ring-1 focus:ring-color-btn"
+                                required
                             >
                                 <option value="">Seleccione una opción</option>
                                 <option value="Consulta general">
@@ -300,7 +301,10 @@
                                 name="transporte"
                                 id="transporte"
                                 v-model="form.transporte"
+                                class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm focus:border-color-btn focus:ring-1 focus:ring-color-btn"
+                                required
                             >
+                                <option value="">Seleccione una opción</option>
                                 <option value="No transporte">
                                     No lo deseo
                                 </option>
@@ -341,6 +345,7 @@
                                 id="hora_cita"
                                 v-model="form.hora"
                                 class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm focus:border-color-btn focus:ring-1 focus:ring-color-btn"
+                                required
                             />
                         </div>
 
@@ -373,7 +378,7 @@
                 <input
                     type="button"
                     name="next"
-                    class="next float-right mt-5 rounded-md border-none bg-color-btn px-12 py-3 text-sm font-medium text-white cursor-pointer hover:bg-[#45AB97]"
+                    class="next float-right mt-5 rounded-md border-none bg-color-btn px-12 py-3 text-sm font-medium text-white cursor-pointer hover:bg-[#57cc99]"
                     value="Siguiente"
                 />
             </fieldset>
@@ -445,7 +450,7 @@
 
                 <button
                     type="submit"
-                    class="float-right mt-5 rounded-md border-none bg-color-btn px-12 py-3 text-sm font-medium text-white cursor-pointer hover:bg-[#45AB97]"
+                    class="float-right mt-5 rounded-md border-none bg-color-btn px-12 py-3 text-sm font-medium text-white cursor-pointer hover:bg-[#57cc99]"
                 >
                     Confirmar
                 </button>
@@ -502,14 +507,18 @@ fieldset:not(:first-of-type) {
     background: #3e9392;
 }
 
-/* Estilo cuando el input es inválido */
-input,select,textarea:invalid {
-    border-color: #F44336; /* Rojo */
+/* Estilo cuando el input, select o textarea es inválido */
+input:invalid,
+select:invalid,
+textarea:invalid {
+    border-color: #F44336;
 }
 
-        /* Estilo cuando el input es válido */
-input:valid {
-    border-color: #008689; /* Verde */
+/* Estilo cuando el input, select o textarea es válido */
+input:valid,
+select:valid,
+textarea:valid {
+    border-color: #008689;
 }
 
 </style>
