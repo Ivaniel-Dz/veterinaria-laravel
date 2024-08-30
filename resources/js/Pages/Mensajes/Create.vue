@@ -51,13 +51,14 @@
             </button>
         </form>
 
-        <!-- Modal de alerta -->
-        <div v-if="showModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full flex justify-center items-center">
-          <div class="bg-white rounded-lg shadow-lg p-6 w-1/3">
-            <h2 class="text-xl font-bold mb-4">{{ modalTitle }}</h2>
-            <p>{{ modalMessage }}</p>
-          </div>
-        </div>
+        <!-- Importa y utiliza el componente del modal -->
+        <ModalAlert
+          :visible="showModal"
+          :title="modalTitle"
+          :message="modalMessage"
+          :type="modalType"
+          @close="showModal = false"
+        />
 
     </div>
 </template>
@@ -79,6 +80,7 @@ textarea:valid {
 
 <script setup>
 import { reactive, ref } from 'vue';
+import ModalAlert from "../Modal/ModalAlert.vue";
 
 // Instancia de los datos
 const form = reactive({
@@ -89,18 +91,15 @@ const form = reactive({
 
 // Modal de alerta
 const showModal = ref(false);
+const modalType = ref('');
 const modalTitle = ref('');
 const modalMessage = ref('');
 
-const showTemporaryModal = (title, message) => {
+const showTemporaryModal = (title, message, type) => {
   modalTitle.value = title;
   modalMessage.value = message;
+  modalType.value = type;
   showModal.value = true;
-
-  // Auto-cierra el modal después de 3 segundos (3000 ms)
-  setTimeout(() => {
-    showModal.value = false;
-  }, 2000);
 };
 
 // Enviar el mensaje a la BD
@@ -119,17 +118,17 @@ const submitForm = async () => {
 
     if (response.ok) {
       const result = await response.json();
-      showTemporaryModal('¡Éxito!', 'Mensaje enviado exitosamente'); // Modal alert exito
+      showTemporaryModal('¡Éxito!', 'Mensaje enviado exitosamente', 'success'); // Modal alert exito
       form.nombre = '';
       form.email = '';
       form.descripcion = '';
     } else {
       console.error('Error al enviar el formulario:', response.statusText);
-      showTemporaryModal('¡Error!', 'Hubo un error al enviar el formulario. Por favor, inténtelo de nuevo.'); //Modal para el error
+      showTemporaryModal('¡Error!', 'Hubo un error al enviar el formulario. Por favor, inténtelo de nuevo.', 'error'); //Modal para el error
     }
   } catch (error) {
     console.error('Error en la solicitud:', error);
-    showTemporaryModal('¡Error!', 'Hubo un error en la conexión. Por favor, inténtelo de nuevo.'); // Modal para error de conexion
+    showTemporaryModal('¡Error!', 'Hubo un error en la conexión. Por favor, inténtelo de nuevo.', 'error'); // Modal para error de conexion
   }
 };
 </script>
