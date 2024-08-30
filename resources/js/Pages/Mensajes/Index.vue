@@ -154,7 +154,8 @@
           </div>
         </div>
       </section>
-      <!-- Modal -->
+
+      <!-- Modal de confirmación -->
       <div
         v-if="showModal"
         class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
@@ -179,6 +180,7 @@
           </div>
         </div>
       </div>
+      
     </main>
   </AuthenticatedLayout>
 </template>

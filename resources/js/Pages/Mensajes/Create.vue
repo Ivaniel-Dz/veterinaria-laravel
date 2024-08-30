@@ -50,6 +50,15 @@
                 Enviar
             </button>
         </form>
+
+        <!-- Modal de alerta -->
+        <div v-if="showModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full flex justify-center items-center">
+          <div class="bg-white rounded-lg shadow-lg p-6 w-1/3">
+            <h2 class="text-xl font-bold mb-4">{{ modalTitle }}</h2>
+            <p>{{ modalMessage }}</p>
+          </div>
+        </div>
+
     </div>
 </template>
 
@@ -71,12 +80,30 @@ textarea:valid {
 <script setup>
 import { reactive, ref } from 'vue';
 
+// Instancia de los datos
 const form = reactive({
   nombre: '',
   email: '',
   descripcion: ''
 });
 
+// Modal de alerta
+const showModal = ref(false);
+const modalTitle = ref('');
+const modalMessage = ref('');
+
+const showTemporaryModal = (title, message) => {
+  modalTitle.value = title;
+  modalMessage.value = message;
+  showModal.value = true;
+
+  // Auto-cierra el modal después de 3 segundos (3000 ms)
+  setTimeout(() => {
+    showModal.value = false;
+  }, 2000);
+};
+
+// Enviar el mensaje a la BD
 const csrfToken = ref(document.querySelector('meta[name="csrf-token"]').getAttribute('content'));
 
 const submitForm = async () => {
@@ -92,17 +119,17 @@ const submitForm = async () => {
 
     if (response.ok) {
       const result = await response.json();
-      alert('Mensaje enviado exitosamente');
+      showTemporaryModal('¡Éxito!', 'Mensaje enviado exitosamente'); // Modal alert exito
       form.nombre = '';
       form.email = '';
       form.descripcion = '';
     } else {
       console.error('Error al enviar el formulario:', response.statusText);
-      alert('Hubo un error al enviar el formulario. Por favor, inténtelo de nuevo.');
+      showTemporaryModal('¡Error!', 'Hubo un error al enviar el formulario. Por favor, inténtelo de nuevo.'); //Modal para el error
     }
   } catch (error) {
     console.error('Error en la solicitud:', error);
-    alert('Hubo un error en la conexión. Por favor, inténtelo de nuevo.');
+    showTemporaryModal('¡Error!', 'Hubo un error en la conexión. Por favor, inténtelo de nuevo.'); // Modal para error de conexion
   }
 };
 </script>
