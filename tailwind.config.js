@@ -22,7 +22,7 @@ export default {
                 "color-text": "#2f4858",
                 "color-box": "#F3F4F6",
                 "color-btn": "#008689",
-
+                //Color Dark mode
                 "color-dark": "#2f4858",
                 "color-home-dark": "#2f4858",
                 "color-text-dark": "#f1f1e6",

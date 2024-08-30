@@ -1,10 +1,11 @@
 <template>
-  <section class="dark:bg-color-home-dark bg-color-home">
-    <div class=" px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-40">
-      <div class="grid gap-10 lg:grid-cols-2">
-        <div class="flex flex-col justify-center md:pr-8 xl:pr-0 lg:max-w-lg">
+  <section class="dark:bg-color-home-dark bg-color-home py-20 lg:py-40 px-size-mobile lg:px-size-desk md:px-size-tablet mx-auto">
+      <!-- Contenedor cols 2 -->
+      <div class="flex flex-col-reverse lg:grid gap-10 lg:grid-cols-2">
+        <!-- Info -->
+        <div class="flex items-center lg:items-start flex-col justify-center xl:pr-0 lg:max-w-lg">
           <div class="max-w-xl mb-6">
-            <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight c sm:text-4xl sm:leading-none text-color-text-dark ">
+            <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight c sm:text-4xl sm:leading-none text-color-text-dark text-center lg:text-left">
               Bienvenido a<br class="hidden md:block" />
               Veterinaria 
               <span class="inline-block text-deep-purple-accent-400">Happy Pets</span>
@@ -26,7 +27,8 @@
             </a>
           </div>
         </div>
-        <div class="flex items-center justify-center -mx-4 lg:pl-8">
+        <!-- Img -->
+        <div class="flex items-center justify-center lg:pl-8">
           <div class="flex flex-col items-end px-3">
             <img
               class="object-cover mb-6 rounded shadow-lg h-28 sm:h-48 xl:h-56 w-28 sm:w-48 xl:w-56 card-img"
@@ -40,8 +42,9 @@
             src="https://images.pexels.com/photos/6235108/pexels-photo-6235108.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="img-grande" />
           </div>
         </div>
+
       </div>
-    </div>
+
   </section>
 </template>
 
