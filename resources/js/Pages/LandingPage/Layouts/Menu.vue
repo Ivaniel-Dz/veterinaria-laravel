@@ -23,7 +23,7 @@ function Menu(e) {
 <template>
     
     <header
-        class="py-5 md:pl-5 lg:px-28 dark:bg-color-dark bg-color-main shadow dark:shadow-gray-700 md:flex md:items-center md:justify-between sticky top-0">
+        class="py-5 px-size-mobile md:px-size-tablet lg:px-size-desk dark:bg-color-dark bg-color-main shadow dark:shadow-gray-700 md:flex md:items-center md:justify-between sticky top-0">
         <!-- logo -->
         <div class="flex justify-between items-center">
             <span class="dark:text-color-text-dark text-color-text text-2xl font-medium">
@@ -43,25 +43,25 @@ function Menu(e) {
         <ul id="mobile-menu"
             class="md:flex md:items-center dark:text-color-text-dark text-color-text z-[-1] md:z-auto md:static absolute dark:bg-color-dark bg-color-main w-full font-medium left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px]">
 
-            <li class="mx-4 my-6 md:my-0">
+            <li class="md:mx-4 my-6 md:my-0">
                 <a href="#inicio" class="text-[16px] hover:text-color-home transition-all ease-in duration-500">
                     Inicio
                 </a>
             </li>
 
-            <li class="mx-4 my-6 md:my-0">
+            <li class="md:mx-4 my-6 md:my-0">
                 <a href="#servicio" class="text-[16px] hover:text-color-home transition-all ease-in duration-500">
                     Servicio
                 </a>
             </li>
 
-            <li class="mx-4 my-6 md:my-0">
+            <li class="md:mx-4 my-6 md:my-0">
                 <a href="#nosotros" class="text-[16px] hover:text-color-home transition-all ease-in duration-500">
                     Nosotros
                 </a>
             </li>
 
-            <li class="mx-4 my-6 md:my-0">
+            <li class="md:mx-4 my-6 md:my-0">
                 <a href="#contacto" class="text-[16px] hover:text-color-home transition-all ease-in duration-500">
                     Contacto
                 </a>
@@ -72,7 +72,7 @@ function Menu(e) {
             
             <!-- Boton de Dashboard -->
             <div>
-                <a class="dark:bg-color-btn-dark dark:text-color-text bg-color-btn text-color-text-dark duration-500 px-6 py-2 mx-4 rounded btn-hover"
+                <a class="btn-sliding dark:bg-color-btn-dark dark:text-color-text dark:after:bg-gray-400 bg-color-btn text-color-text-dark px-6 py-2 md:mx-4 rounded"
                 :href="loginUrl">
                     Log in
                 </a>
@@ -82,3 +82,32 @@ function Menu(e) {
     </header>
 
 </template>
+
+<style>
+
+/* boton login */
+.btn-sliding {
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  z-index: 0;
+}
+.btn-sliding:hover {
+  color: #fff;
+}
+.btn-sliding:hover:after {
+  width: 100%;
+}
+.btn-sliding:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  transition: all 0.3s ease;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: #57cc99;
+}
+
+</style>

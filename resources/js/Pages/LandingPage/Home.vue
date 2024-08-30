@@ -58,16 +58,16 @@
 
 /* Estilo inicial del botón */
 .slide-top {
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
+  -webkit-transform: translateY(1);
+  transform: translateY(1);
   -webkit-transition: transform 0.5s linear;
   transition: transform 0.5s linear;
 }
 
 /* Al pasar el cursor, el botón se desliza hacia arriba */
 .slide-top:hover {
-  -webkit-transform: translateY(-5px);
-  transform: translateY(-5px);
+  -webkit-transform: translateY(-6px);
+  transform: translateY(-6px);
 }
 
 
