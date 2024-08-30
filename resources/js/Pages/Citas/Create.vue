@@ -678,13 +678,23 @@ async function submitForm() {
                 throw new Error("Ocurrió un error al guardar la cita.");
             }
         } else {
-            showTemporaryModal('¡Éxito!', 'Mensaje enviado exitosamente', 'success'); // Modal alert exito
-            // Limpiar formulario después del envío
-            Object.keys(form).forEach((key) => (form[key] = ""));
-            errors.value = {};
+            // Modal alert exito
+            showTemporaryModal('¡Éxito!', 'Mensaje enviado exitosamente', 'success');
+            
+            // Recargar la pagina
+            setTimeout(() => {
+                window.location.reload();
+            }, 1500);
+
+            // Limpia el formulario después del envío
+            /**
+             Object.keys(form).forEach((key) => (form[key] = ""));
+             errors.value = {};
+             **/
         }
     } catch (error) {
-        showTemporaryModal('¡Error!', 'Hubo un error en la conexión. Por favor, inténtelo de nuevo.', 'error'); // Modal para error de conexion
+        // Modal para error de conexion
+        showTemporaryModal('¡Error!', 'Hubo un error en la conexión. Por favor, inténtelo de nuevo.', 'error');
     }
 }
 </script>

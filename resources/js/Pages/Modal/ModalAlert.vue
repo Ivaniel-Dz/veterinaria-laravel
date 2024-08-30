@@ -20,7 +20,6 @@
   </div>
 </template>
 
-
 <script setup>
 import { defineProps, defineEmits, watch } from 'vue';
 

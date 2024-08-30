@@ -155,32 +155,14 @@
         </div>
       </section>
 
-      <!-- Modal de confirmación -->
-      <div
-        v-if="showModal"
-        class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
-      >
-        <div class="bg-white p-6 rounded shadow-md">
-          <h3 class="text-lg text-gray-900 font-semibold mb-4">
-            ¿Estás seguro de que quieres eliminar este mensaje?
-          </h3>
-          <div class="flex justify-end">
-            <button
-              @click="confirmDelete"
-              class="bg-red-500 text-white px-4 py-2 rounded mr-2 hover:bg-[#d51818]"
-            >
-              Eliminar
-            </button>
-            <button
-              @click="closeModal"
-              class="bg-gray-300 px-4 py-2 rounded hover:bg-gray-400"
-            >
-              Cancelar
-            </button>
-          </div>
-        </div>
-      </div>
-      
+      <!-- Modal de Confirmación -->
+      <ModalConfirm
+        :visible="showModal"
+        :message="modalMessage"
+        :eliminar="confirmDelete"
+        :close="closeModal"
+      />
+
     </main>
   </AuthenticatedLayout>
 </template>
@@ -191,19 +173,26 @@ import { Inertia } from '@inertiajs/inertia';
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import { Head } from "@inertiajs/vue3";
 import IconTrash from "../Icons/Trash.vue";
+import ModalConfirm from "../Modal/ModalConfirm.vue";
 
+// Instancia los datos de la BD (recibe la tabla mensaje)
 const props = defineProps({
     mensajes: {
         type: Object,
     },
 });
 
+// Modal confirmación
 const showModal = ref(false);
+const modalMessage = ref('');
+
+// id del mensaje a eliminar
 const mensajeId = ref(null);
 
 // Abrir modal
 function openModal(id) {
     mensajeId.value = id;
+    modalMessage.value = '¿Estás seguro de que quieres eliminar este mensaje?';
     showModal.value = true;
 }
 
@@ -222,6 +211,7 @@ function confirmDelete() {
             }
         });
     }
+    // Ejecución de la Función
     closeModal();
 }
 </script>
