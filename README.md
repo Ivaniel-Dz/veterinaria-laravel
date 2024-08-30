@@ -214,15 +214,18 @@ php artisan serve
 ```
 
 # Preview de la web
+
+### Preview
+![preview](/public/img/preview/preview.webp)
+
+### Preview responsive
+![preview](/public/img/preview/responsive-dark.webp)
+
 ### Landing Page
-![preview](/public/img/preview/preview1.jpeg)
+![preview](/public/img/preview/landing-page.webp)
+
 ### Landing Page (Modo Oscuro)
-![preview](/public/img/preview/preview2.jpeg)
-### Login
-![preview](/public/img/preview/preview3.jpeg)
-### Registro
-![preview](/public/img/preview/preview4.jpeg)
-### Recuperación de contraseña
-![preview](/public/img/preview/preview5.jpeg)
+![preview](/public/img/preview/landing-page-dark.webp)
+
 ### Dashboard
-![preview](/public/img/preview/preview6.jpeg)
+![preview](/public/img/preview/dashboard.webp)
