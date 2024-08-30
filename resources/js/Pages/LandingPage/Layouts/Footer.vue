@@ -1,15 +1,15 @@
 <template>
 
-    <footer class="text-gray-600 body-font">
+    <footer class="body-font text-color-text dark:text-color-text-dark">
 
         <div class="px-size-mobile md:px-size-tablet lg:px-size-desk pb-5 md:py-8 flex items-center sm:flex-row flex-col">
             <!-- Logo -->
-            <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900 cursor-pointer" href="#inicio">
+            <a class="flex title-font font-medium items-center md:justify-start justify-center text-color.text cursor-pointer" href="#inicio">
                 <PawIcon/>
-                <span class="ml-3 text-xl dark:text-white">Happy Pets</span>
+                <span class="ml-3 text-xl ">Happy Pets</span>
             </a>
 
-            <p class="dark:text-white text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
+            <p class="text-sm sm:ml-4 sm:pl-4 sm:py-2 sm:mt-0 mt-4">
                 © 2020 Happy Pets
             </p>
 
