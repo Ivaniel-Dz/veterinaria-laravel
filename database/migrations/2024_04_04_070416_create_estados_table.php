@@ -20,10 +20,10 @@ Schema::create('estados', function (Blueprint $table) {
 
         // Insertar los valores predefinidos
         DB::table('estados')->insert([
-            ['estado' => 'pendiente'],
-            ['estado' => 'atendido'],
-            ['estado' => 'pospuesto'],
-            ['estado' => 'cancelado'],
+            ['estado' => 'Pendiente'],
+            ['estado' => 'Atendido'],
+            ['estado' => 'Pospuesto'],
+            ['estado' => 'Cancelado'],
         ]);
     }
 

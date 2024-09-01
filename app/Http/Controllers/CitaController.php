@@ -95,27 +95,66 @@ class CitaController extends Controller
     }
 
     // Actualizar datos (PUT)
-public function update(Request $request, $id)
-{
-    $request->validate([
-        'mascota' => 'required|string|max:50',
-        'fecha_nacimiento' => 'required|date',
-        'nombre' => 'required|string|max:100',
-        'celular' => 'required|string|max:15',
-        'telefono' => 'required|string|max:15',
-        'direccion' => 'required|string|max:255',
-        'servicio' => 'required|string|max:50',
-        'hora' => 'required|date_format:H:i',
-        'fecha' => 'required|date',
-        'transporte' => 'nullable|string|max:50',
-        'estado' => 'required|integer|in:1,2,3,4',
-    ]);
+    public function update(Request $request, $id)
+    {
+        $validatedData = $request->validate([
+            'mascota' => 'required|string|max:50',
+            'especie' => 'required|string|max:255', // No actualizar
+            'raza' => 'nullable|string|max:255',    // No actualizar
+            'sexo' => 'required|string|max:10',     // No actualizar
+            'fecha_nacimiento' => 'nullable|date',
+            'peso' => 'nullable|numeric',           // No actualizar
+            'nombre' => 'required|string|max:255',
+            'celular' => 'required|string|max:15',
+            'telefono' => 'required|string|max:15',
+            'direccion' => 'required|string|max:255',
+            'servicio' => 'required|string|max:50',
+            'hora' => 'required|date_format:H:i',
+            'fecha' => 'required|date',
+            'transporte' => 'nullable|string|max:50',
+            'comentario' => 'nullable|string',       // No actualizar
+            'estado' => 'required|integer|in:1,2,3,4',
+        ]);
 
-    $cita = Cita::findOrFail($id);
-    $cita->update($request->all());
+        $cita = Cita::findOrFail($id);
 
-    return response()->json(['message' => 'Cita actualizada exitosamente!']);
-}
+        // Actualizar mascota
+        $mascota = Mascota::findOrFail($cita->id_mascota);
+        $mascota->update([
+            'mascota' => $validatedData['mascota'],
+            'especie' => $validatedData['especie'],
+            'raza' => $validatedData['raza'],
+            'sexo' => $validatedData['sexo'],
+            'fecha_nacimiento' => $validatedData['fecha_nacimiento'],
+            'peso' => $validatedData['peso'],
+        ]);
+
+        // Actualizar propietario
+        $propietario = Propietario::findOrFail($cita->id_propietario);
+        $propietario->update([
+            'nombre' => $validatedData['nombre'],
+            'celular' => $validatedData['celular'],
+            'telefono' => $validatedData['telefono'],
+            'direccion' => $validatedData['direccion'],
+        ]);
+
+        // Actualizar servicio
+        $servicio = Servicio::findOrFail($cita->id_servicio);
+        $servicio->update([
+            'servicio' => $validatedData['servicio'],
+            'hora' => $validatedData['hora'],
+            'fecha' => $validatedData['fecha'],
+        ]);
+
+        // Actualizar cita
+        $cita->update([
+            'id_estado' => $validatedData['estado'],
+            'transporte' => $validatedData['transporte'],
+            'comentario' => $validatedData['comentario'],
+        ]);
+
+        return redirect()->route('citas.index')->with('success', 'Cita actualizada exitosamente!');
+    }
 
 
     // Eliminar datos (DELETE)
