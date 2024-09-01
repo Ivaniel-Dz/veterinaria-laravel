@@ -1,11 +1,10 @@
 <template>
+
     <Head title="Citas -" />
 
     <AuthenticatedLayout>
         <!-- Tabla de Registro de Citas -->
-        <section
-            class="bg-white overflow-hidden shadow-sm sm:rounded-lg"
-        >
+        <section class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <!-- Component -->
             <section class="container mx-auto px-4 sm:px-8">
                 <div class="py-8">
@@ -22,8 +21,7 @@
                         <div class="flex flex-row mb-1 sm:mb-0">
                             <div class="relative">
                                 <select
-                                    class="h-full rounded-l border block appearance-none w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                >
+                                    class="h-full rounded-l border block appearance-none w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
                                     <option>5</option>
                                     <option>10</option>
                                     <option>20</option>
@@ -34,94 +32,73 @@
                         <!-- Search -->
                         <div class="block relative">
                             <!-- Icon -->
-                            <span
-                                class="h-full absolute inset-y-0 left-0 flex items-center pl-2"
-                            >
-                                <svg
-                                    viewBox="0 0 24 24"
-                                    class="h-4 w-4 fill-current text-gray-500"
-                                >
+                            <span class="h-full absolute inset-y-0 left-0 flex items-center pl-2">
+                                <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current text-gray-500">
                                     <path
-                                        d="M10 4a6 6 0 100 12 6 6 0 000-12zm-8 6a8 8 0 1114.32 4.906l5.387 5.387a1 1 0 01-1.414 1.414l-5.387-5.387A8 8 0 012 10z"
-                                    ></path>
+                                        d="M10 4a6 6 0 100 12 6 6 0 000-12zm-8 6a8 8 0 1114.32 4.906l5.387 5.387a1 1 0 01-1.414 1.414l-5.387-5.387A8 8 0 012 10z">
+                                    </path>
                                 </svg>
                             </span>
                             <!-- Input -->
-                            <input
-                                placeholder="Search"
-                                class="appearance-none rounded-r rounded-l sm:rounded-l-none border border-gray-400 border-b block pl-8 pr-6 py-2 w-full bg-white text-sm placeholder-gray-400 text-gray-700 focus:bg-white focus:placeholder-gray-600 focus:text-gray-700 focus:outline-none"
-                            />
+                            <input placeholder="Search"
+                                class="appearance-none rounded-r rounded-l sm:rounded-l-none border border-gray-400 border-b block pl-8 pr-6 py-2 w-full bg-white text-sm placeholder-gray-400 text-gray-700 focus:bg-white focus:placeholder-gray-600 focus:text-gray-700 focus:outline-none" />
                         </div>
                     </div>
 
                     <!-- Tabla -->
-                    <div
-                        class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto"
-                    >
-                        <div
-                            class="inline-block min-w-full shadow rounded-lg overflow-hidden"
-                        >
+                    <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+                        <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
                             <table class="min-w-full leading-normal">
                                 <!-- Encabezado -->
                                 <thead>
                                     <tr>
                                         <th
-                                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-                                        >
+                                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                             N°
                                         </th>
 
                                         <th
-                                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-                                        >
+                                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                             Dueño
                                         </th>
 
                                         <th
-                                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-                                        >
+                                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                             Mascota
                                         </th>
 
                                         <th
-                                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-                                        >
+                                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                             Servicio
                                         </th>
 
                                         <th
-                                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-                                        >
+                                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                             Transporte
                                         </th>
 
                                         <th
-                                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-                                        >
+                                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                             Comentario
                                         </th>
 
                                         <th
-                                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-                                        >
+                                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                             Fecha
                                         </th>
 
                                         <th
-                                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-                                        >
+                                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                             Hora
                                         </th>
 
                                         <th
-                                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-                                        >
+                                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                             Estado
                                         </th>
 
                                         <th
-                                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-                                        >
+                                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                             Acción
                                         </th>
                                     </tr>
@@ -130,18 +107,11 @@
                                 <!-- Tabla de Contenido -->
                                 <tbody>
                                     <!-- Cantidad  -->
-                                    <tr
-                                        v-for="cita in citas.data"
-                                        :key="cita.id"
-                                    >
-                                        <td
-                                            class="px-5 py-5 border-b border-gray-200 bg-white text-sm"
-                                        >
+                                    <tr v-for="cita in citas.data" :key="cita.id">
+                                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                             <div class="flex items-center">
                                                 <div class="ml-3">
-                                                    <p
-                                                        class="text-gray-900 whitespace-no-wrap"
-                                                    >
+                                                    <p class="text-gray-900 whitespace-no-wrap">
                                                         {{ cita.id }}
                                                     </p>
                                                 </div>
@@ -149,14 +119,10 @@
                                         </td>
 
                                         <!-- Dueño Nombre -->
-                                        <td
-                                            class="px-5 py-5 border-b border-gray-200 bg-white text-sm"
-                                        >
+                                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                             <div class="flex items-center">
                                                 <div class="ml-3">
-                                                    <p
-                                                        class="text-gray-900 whitespace-no-wrap"
-                                                    >
+                                                    <p class="text-gray-900 whitespace-no-wrap">
                                                         {{
                                                             cita.propietario
                                                                 .nombre
@@ -167,132 +133,78 @@
                                         </td>
 
                                         <!-- Nombre mascota -->
-                                        <td
-                                            class="px-5 py-5 border-b border-gray-200 bg-white text-sm"
-                                        >
-                                            <p
-                                                class="text-gray-900 whitespace-no-wrap"
-                                            >
+                                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                            <p class="text-gray-900 whitespace-no-wrap">
                                                 {{ cita.mascota.mascota }}
                                             </p>
                                         </td>
 
                                         <!-- Servicio -->
-                                        <td
-                                            class="px-5 py-5 border-b border-gray-200 bg-white text-sm"
-                                        >
-                                            <p
-                                                class="text-gray-900 whitespace-no-wrap"
-                                            >
+                                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                            <p class="text-gray-900 whitespace-no-wrap">
                                                 {{ cita.servicio.servicio }}
                                             </p>
                                         </td>
 
                                         <!-- Transporte -->
-                                        <td
-                                            class="px-5 py-5 border-b border-gray-200 bg-white text-sm"
-                                        >
-                                            <p
-                                                class="text-gray-900 whitespace-no-wrap"
-                                            >
+                                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                            <p class="text-gray-900 whitespace-no-wrap">
                                                 {{ cita.transporte }}
                                             </p>
                                         </td>
 
                                         <!-- Comentario -->
-                                        <td
-                                            class="px-5 py-5 border-b border-gray-200 bg-white text-sm"
-                                        >
-                                            <p
-                                                class="text-gray-900 whitespace-no-wrap"
-                                            >
+                                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                            <p class="text-gray-900 whitespace-no-wrap">
                                                 {{ cita.comentario }}
                                             </p>
                                         </td>
 
                                         <!-- Fecha -->
-                                        <td
-                                            class="px-5 py-5 border-b border-gray-200 bg-white text-sm"
-                                        >
-                                            <p
-                                                class="text-gray-900 whitespace-no-wrap"
-                                            >
+                                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                            <p class="text-gray-900 whitespace-no-wrap">
                                                 {{ cita.servicio.fecha }}
                                             </p>
                                         </td>
 
                                         <!-- Hora -->
-                                        <td
-                                            class="px-5 py-5 border-b border-gray-200 bg-white text-sm"
-                                        >
-                                            <p
-                                                class="text-gray-900 whitespace-no-wrap"
-                                            >
+                                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                            <p class="text-gray-900 whitespace-no-wrap">
                                                 {{ cita.servicio.hora }}
                                             </p>
                                         </td>
 
                                         <!-- Estado -->
-                                        <td
-                                            class="px-5 py-5 border-b border-gray-200 bg-white text-sm"
-                                        >
-                                            <span
-                                                class="relative inline-block px-3 py-1 font-semibold leading-tight"
-                                            >
-                                                <span
-                                                    aria-hidden
-                                                    class="absolute inset-0 bg-gray-300 opacity-50 rounded-full"
-                                                ></span>
+                                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                            <span class="relative inline-block px-3 py-1 font-semibold leading-tight">
+                                                <span aria-hidden
+                                                    class="absolute inset-0 bg-gray-300 opacity-50 rounded-full"></span>
 
-                                                <span
-                                                    class="relative text-orange-600"
-                                                    v-if="cita.id_estado === 1"
-                                                    >Pendiente</span
-                                                >
-                                                <span
-                                                    class="relative text-green-900"
-                                                    v-else-if="
-                                                        cita.id_estado === 2
-                                                    "
-                                                    >Atendido</span
-                                                >
-                                                <span
-                                                    class="relative text-gray-700"
-                                                    v-else-if="
-                                                        cita.id_estado === 3
-                                                    "
-                                                    >Pospuesto</span
-                                                >
-                                                <span
-                                                    class="relative text-red-900"
-                                                    v-else-if="
-                                                        cita.id_estado === 4
-                                                    "
-                                                    >Cancelado</span
-                                                >
-                                                <span class="relative" v-else
-                                                    >Desconocido</span
-                                                >
+                                                <span class="relative text-orange-600"
+                                                    v-if="cita.id_estado === 1">Pendiente</span>
+                                                <span class="relative text-green-900" v-else-if="
+                                                    cita.id_estado === 2
+                                                ">Atendido</span>
+                                                <span class="relative text-gray-700" v-else-if="
+                                                    cita.id_estado === 3
+                                                ">Pospuesto</span>
+                                                <span class="relative text-red-900" v-else-if="
+                                                    cita.id_estado === 4
+                                                ">Cancelado</span>
+                                                <span class="relative" v-else>Desconocido</span>
                                                 <!-- En caso de que no coincida con ningún estado -->
                                             </span>
                                         </td>
 
                                         <!-- Botones de accion -->
-                                        <td
-                                            class="border-b border-gray-200 bg-white px-5 py-5 text-sm flex"
-                                        >
-                                            <Link :href="route('citas.edit', cita.id)" class="btn btn-primary">
-                                            <IconEdit
-                                                class="hover:stroke-[#0980f0]"/>
+                                        <td class="border-b border-gray-200 bg-white px-5 py-5 text-sm flex">
+                                            <Link :href="route('citas.edit', cita.id)
+                                                " class="btn btn-primary">
+                                            <IconEdit class="hover:stroke-[#0980f0]" />
                                             </Link>
 
-                                            <button
-                                                class="hover:text-red-900"
-                                                @click="openModal(cita.id)"
-                                            >
-                                                <IconTrash
-                                                    class="hover:stroke-[#d51818]"
-                                                />
+                                            <button class="hover:text-red-900" @click="openModal(cita.id)">
+                                                <IconTrash class="hover:stroke-[#d51818]" />
                                             </button>
                                         </td>
                                     </tr>
@@ -301,22 +213,19 @@
 
                             <!-- Pagination -->
                             <div
-                                class="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between"
-                            >
+                                class="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between">
                                 <span class="text-xs xs:text-sm text-gray-900">
                                     Showing 1 to 4 of 50 Entries
                                 </span>
                                 <div class="inline-flex mt-2 xs:mt-0">
                                     <button
                                         class="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-l"
-                                         @click="previousPage" :disabled="!citas.prev_page_url"
-                                    >
+                                        @click="previousPage" :disabled="!citas.prev_page_url">
                                         Prev
                                     </button>
                                     <button
                                         class="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-r"
-                                        @click="nextPage" :disabled="!citas.next_page_url"
-                                    >
+                                        @click="nextPage" :disabled="!citas.next_page_url">
                                         Next
                                     </button>
                                 </div>
@@ -326,24 +235,16 @@
                 </div>
             </section>
 
-     <!-- Modal de Confirmación -->
-            <ModalConfirm
-                :visible="showModal"
-                :message="modalMessage"
-                :eliminar="confirmDelete"
-                :close="closeModal"
-            />
-        
+            <!-- Modal de Confirmación -->
+            <ModalConfirm :visible="showModal" :message="modalMessage" :eliminar="confirmDelete" :close="closeModal" />
         </section>
-
     </AuthenticatedLayout>
 </template>
 
 <script setup>
-import { Link } from '@inertiajs/vue3';
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import { Inertia } from "@inertiajs/inertia";
-import { Head } from "@inertiajs/vue3";
+import { Head, Link } from "@inertiajs/vue3";
 import { ref } from "vue";
 import IconEdit from "../Icons/Edit.vue";
 import IconTrash from "../Icons/Trash.vue";
@@ -358,7 +259,7 @@ const props = defineProps({
 
 // Modal confirmación
 const showModal = ref(false);
-const modalMessage = ref('');
+const modalMessage = ref("");
 
 // id del mensaje a eliminar
 const citaId = ref(null);
@@ -366,7 +267,7 @@ const citaId = ref(null);
 // Abrir modal
 function openModal(id) {
     citaId.value = id;
-    modalMessage.value = '¿Estás seguro de que quieres eliminar este mensaje?';
+    modalMessage.value = "¿Estás seguro de que quieres eliminar este mensaje?";
     showModal.value = true;
 }
 
@@ -391,18 +292,16 @@ function confirmDelete() {
     closeModal();
 }
 
-
 /*********************  Paginación *********************************/
 const nextPage = () => {
-  if (props.citas.next_page_url) {
-    Inertia.visit(props.citas.next_page_url);
-  }
+    if (props.citas.next_page_url) {
+        Inertia.visit(props.citas.next_page_url);
+    }
 };
 
 const previousPage = () => {
-  if (props.citas.prev_page_url) {
-    Inertia.visit(props.citas.prev_page_url);
-}
+    if (props.citas.prev_page_url) {
+        Inertia.visit(props.citas.prev_page_url);
+    }
 };
-
 </script>

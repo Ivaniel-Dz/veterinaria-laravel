@@ -47,4 +47,10 @@ export const servicios = [
         descripcion:
             "Limpieza dental, extracción de piezas dentales dañadas y tratamiento de enfermedades bucales en tu mascota.",
     },
+    {
+        imagen: "https://images.pexels.com/photos/19145883/pexels-photo-19145883/free-photo-of-animal-perro-mascota-mojado.jpeg",
+        servicio: "Peluquería",
+        descripcion:
+            "Brindamos peluquería especializada para perros, con cortes, baños y cuidado integral en nuestra veterinaria.",
+    },
 ];
