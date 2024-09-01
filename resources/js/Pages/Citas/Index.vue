@@ -245,7 +245,7 @@
                                                 ></span>
 
                                                 <span
-                                                    class="relative text-orange-900"
+                                                    class="relative text-orange-600"
                                                     v-if="cita.id_estado === 1"
                                                     >Pendiente</span
                                                 >
@@ -257,18 +257,18 @@
                                                     >Atendido</span
                                                 >
                                                 <span
-                                                    class="relative text-red-900"
+                                                    class="relative text-gray-700"
                                                     v-else-if="
                                                         cita.id_estado === 3
                                                     "
-                                                    >Cancelado</span
+                                                    >Pospuesto</span
                                                 >
                                                 <span
-                                                    class="relative"
+                                                    class="relative text-red-900"
                                                     v-else-if="
                                                         cita.id_estado === 4
                                                     "
-                                                    >Pospuesto</span
+                                                    >Cancelado</span
                                                 >
                                                 <span class="relative" v-else
                                                     >Desconocido</span

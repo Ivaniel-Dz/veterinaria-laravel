@@ -157,13 +157,9 @@ La vista `'Mensajes/Index'` es utilizada para mostrar la lista paginada de mensa
 
 Para la tabla citas se realiza el mismo proceso que la tabla mensajes. La diferencias es que la tabla citas esta referenciada con otras tablas.
 
-## Procesos Pendientes
-> El proyecto muestra, elimina y crea datos de las tablas.
-- Actualización de la tabla citas
-
 ## Mejoras del sistema
-- Que muestre en el formulario de citas que hora y dia están disponibles
-- Asignar veterinario automáticamente de acuerdo su disponibilidad
+- Que muestre en el formulario de registros de citas que hora y dia están disponibles par que no choquen entre citas.
+- Asignar veterinario automáticamente de acuerdo su "disponibilidad"
 - Asignar roles
 
 # Ejecución del Proyecto en Local
