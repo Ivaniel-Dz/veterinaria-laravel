@@ -3,9 +3,9 @@
 ## Tecnologías usadas
 - Laravel 11
 - Vue 3
-- Inertia
+- Inertia v3
 - Mysql
-- Tailwind
+- Tailwind css
 
 ## Instalación
 1. Creación del proyecto
@@ -155,7 +155,11 @@ La vista `'Mensajes/Index'` es utilizada para mostrar la lista paginada de mensa
 
 ---
 
-Esta documentación proporciona una descripción general de los componentes principales relacionados con el manejo de mensajes en la aplicación. Los modelos, controladores, rutas y vistas trabajan en conjunto para permitir a los usuarios ver y gestionar mensajes de manera efectiva.
+Para la tabla citas se realiza el mismo proceso que la tabla mensajes. La diferencias es que la tabla citas esta referenciada con otras tablas.
+
+## Procesos Pendientes
+> El proyecto muestra, elimina y crea datos de las tablas.
+- Actualización de la tabla citas
 
 ## Mejoras del sistema
 - Que muestre en el formulario de citas que hora y dia están disponibles
