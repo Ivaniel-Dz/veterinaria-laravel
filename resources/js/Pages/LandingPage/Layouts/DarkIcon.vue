@@ -1,8 +1,19 @@
+<script setup>
+import { ref } from 'vue';
+
+const isDarkMode = ref(document.documentElement.classList.contains('dark'));
+
+function toggleTheme() {
+  isDarkMode.value = !isDarkMode.value;
+  document.documentElement.classList.toggle('dark', isDarkMode.value);
+}
+</script>
+
+
 <template>
-  
   <!-- Botón switch dark/light-->
       <button
-        onclick="(() => document.body.classList.toggle('dark'))()"
+        @click="toggleTheme"
         class="h-8 w-8 flex justify-center items-center rounded-md dark:text-color-text-dark text-color-text hover:bg-gray-300 dark:hover:bg-gray-800 hover:text-gray-800 dark:hover:text-white wobble-hor-bottom"
       >
         <!-- btn dark -->
@@ -52,7 +63,6 @@
 </template>
 
 <style>
-
 /* Hover animation */
 .wobble-hor-bottom:hover {
 	-webkit-animation: wobble-hor-bottom 0.8s infinite both;
