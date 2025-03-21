@@ -163,6 +163,13 @@ Para la tabla citas se realiza el mismo proceso que la tabla mensajes. La difere
 - Asignar roles
 
 # Ejecución del Proyecto en Local
+
+>  Asegúrate de tener instalados previamente:
+> 1. PHP 8.2 o superior (Laravel 11 lo requiere).
+> 2. Composer (para manejar dependencias de Laravel).
+> 3. Node.js & npm (para Vue 3 y Tailwind CSS).
+> 4. MySQL (como base de datos).
+
 1. Instala las dependencias de Laravel utilizando Composer:
 ```bash
 composer install
@@ -180,7 +187,7 @@ DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=veterinaria
 DB_USERNAME=root
-DB_PASSWORD=ivaniel
+DB_PASSWORD=root
 ```
 
 4. Genera la clave de aplicación de Laravel:
@@ -190,22 +197,22 @@ php artisan key:generate
 
 5. Ejecuta las migraciones para crear las tablas en la base de datos:
 ```bash
-php artisan migrate
+php artisan migrate --seed
 ```
 
-6. (Opcional) Sembrar la base de datos con datos de prueba:
-```bash
-php artisan db:seed
-```
-
-7. Instala las dependencias de Vue
+6. Instala las dependencias de Vue
 ```bash
 npm install
 ```
 
-8. Ejecuta el servidor de vite
+7. Ejecuta el servidor de vite
 ```bash
 npm run dev
+```
+
+- Si quieres que se recargue automáticamente mientras desarrollas:
+```bash
+npm run watch
 ```
 
 9. Ejecuta el servidor de composer
