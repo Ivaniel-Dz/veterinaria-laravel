@@ -11,7 +11,7 @@
                     <!-- Titulo -->
                     <div>
                         <h2 class="text-2xl font-semibold leading-tight">
-                            Mensajes
+                            Citas Registradas
                         </h2>
                     </div>
 
